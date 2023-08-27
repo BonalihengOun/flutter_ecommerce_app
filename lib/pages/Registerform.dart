@@ -41,9 +41,9 @@ class _RegisterState extends State<Register> {
                 'Create a new account',
                 style: TextStyle(
                     fontFamily: 'NiraRegular',
-                    fontSize: 16,
+                    fontSize: 14,
                     letterSpacing: 0.5,
-                    color: Grey),
+                    color: Grey.withOpacity(0.8)),
               ),
             ],
           ),
