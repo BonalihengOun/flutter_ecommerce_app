@@ -1,40 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 
-class PasswordInput extends StatefulWidget {
+class fullnameForm extends StatefulWidget {
   final TextEditingController inputController;
-  final String text;
-  PasswordInput({Key? key, required this.inputController, required this.text})
-      : super(key: key);
+  fullnameForm({Key? key, required this.inputController}) : super(key: key);
 
   @override
-  State<PasswordInput> createState() => _PasswordInputState();
+  State<fullnameForm> createState() => _fullnameFormState();
 }
 
-class _PasswordInputState extends State<PasswordInput> {
-  bool _isObscured = true;
+class _fullnameFormState extends State<fullnameForm> {
+  bool _hasText = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Listen for changes in the text field
+    widget.inputController.addListener(_updateHasText);
+  }
+
+  void _updateHasText() {
+    setState(() {
+      _hasText = widget.inputController.text.isNotEmpty;
+    });
+  }
+
+  @override
+  void dispose() {
+    // Clean up by removing the listener when the widget is disposed
+    widget.inputController.removeListener(_updateHasText);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    const accentColor = Color(0xffffffff);
-
-    const errorColor = Color(0xffEF4444);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Email",
-          style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.normal,
-              color: Colors.white.withOpacity(.9)),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
         Container(
-          height: 50,
+          height: 58,
           width: 350,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
@@ -49,29 +53,24 @@ class _PasswordInputState extends State<PasswordInput> {
               //Do something wi
             },
             keyboardType: TextInputType.emailAddress,
-            obscureText: _isObscured,
             style: const TextStyle(
                 fontSize: 16, fontFamily: 'NiraBold', color: Grey),
             decoration: InputDecoration(
-              prefixIcon: Padding(
-                padding: const EdgeInsets.only(right: 13),
-                child: Image.asset(
-                  'lib/assets/pic/IconLock.png',
-                  alignment: Alignment(0.5, 0),
-                ),
-              ),
-              suffixIcon: IconButton(
-                icon:
-                    Icon(_isObscured ? Icons.visibility_off : Icons.visibility),
-                onPressed: () {
-                  setState(() {
-                    _isObscured = !_isObscured; // Toggle password visibility
-                  });
-                },
-              ),
+              prefixIcon: _hasText
+                  ? Image.asset(
+                      'lib/assets/pic/UserBlue.png',
+                      alignment: Alignment(0.3, 0),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.only(right: 11),
+                      child: Image.asset(
+                        'lib/assets/pic/UserIcon.png',
+                        alignment: Alignment(0.4, 0),
+                      ),
+                    ),
               filled: true,
               fillColor: accentColor,
-              hintText: widget.text,
+              hintText: 'Full name',
               hintStyle: TextStyle(
                   color: Colors.grey.withOpacity(.75),
                   fontFamily: 'NiraRegular'),

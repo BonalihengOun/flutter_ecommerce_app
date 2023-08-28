@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/SignIn.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/TextFieldEmail.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/TextFieldPassword.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/fullnameWidget.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
+import 'package:flutter_sneaker_shop_ecommerce/pages/loginPage.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -9,6 +14,10 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final TextEditingController _fullnameController = TextEditingController();
+  final TextEditingController _EmailController = TextEditingController();
+  final TextEditingController _PasswordformController = TextEditingController();
+  final TextEditingController _ConfirmPWController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +53,67 @@ class _RegisterState extends State<Register> {
                     fontSize: 14,
                     letterSpacing: 0.5,
                     color: Grey.withOpacity(0.8)),
+              ),
+              SizedBox(
+                height: 28,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  fullnameForm(inputController: _fullnameController),
+                  EmailInput(inputController: _EmailController),
+                  PasswordInput(
+                    inputController: _PasswordformController,
+                    text: 'Password',
+                  ),
+                  PasswordInput(
+                    inputController: _ConfirmPWController,
+                    text: 'Comfirm Password',
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  SignInButton(
+                    text: 'Sign Up',
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => LoginPage(),
+                      ));
+                    },
+                    right: 150,
+                    left: 150,
+                    top: 20,
+                    bottom: 20,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "have an account?",
+                    style: TextStyle(
+                        fontFamily: 'NiraRegular',
+                        color: Grey,
+                        fontSize: 12,
+                        letterSpacing: 0.5),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => LoginPage(),
+                      ));
+                    },
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                          fontFamily: 'NiraBold',
+                          fontSize: 12,
+                          color: BluePrimary,
+                          letterSpacing: 0.5),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

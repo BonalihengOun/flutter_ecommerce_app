@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 68),
+          padding: const EdgeInsets.only(top: 112),
           child: Column(
             children: [
               Center(
@@ -60,11 +60,21 @@ class _LoginPageState extends State<LoginPage> {
                 height: 28,
               ),
               EmailInput(inputController: _emailController),
-              PasswordInput(inputController: _passwordController),
+              PasswordInput(
+                inputController: _passwordController,
+                text: 'Password',
+              ),
               SizedBox(
                 height: 40,
               ),
-              SignInButton(text: 'Sign In', onPressed: () {}),
+              SignInButton(
+                text: 'Sign In',
+                onPressed: () {},
+                right: 150,
+                left: 150,
+                top: 15,
+                bottom: 15,
+              ),
               SizedBox(
                 height: 21,
               ),
