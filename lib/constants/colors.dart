@@ -13,3 +13,4 @@ const Color Grey = Color(0xff9198B1);
 const Color Light = Color(0xffEBF0FF);
 const accentColor = Color(0xffffffff);
 const errorColor = Color(0xffEF4444);
+const NiraBold = 'Niradei-Bold.otf';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sneaker_shop_ecommerce/HomePage.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/SignIn.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/TextFieldEmail.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/TextFieldPassword.dart';
@@ -69,7 +70,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SignInButton(
                 text: 'Sign In',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) => HomePage(),
+                  ));
+                },
                 right: 150,
                 left: 150,
                 top: 15,
