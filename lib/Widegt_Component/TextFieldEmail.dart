@@ -68,6 +68,7 @@ class _EmailInputState extends State<EmailInput> {
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
               focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
                 borderSide: BorderSide(color: BluePrimary, width: 1.0),
               ),
               errorBorder: const OutlineInputBorder(
@@ -76,6 +77,7 @@ class _EmailInputState extends State<EmailInput> {
               ),
               enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Grey, width: 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
             ),
           ),

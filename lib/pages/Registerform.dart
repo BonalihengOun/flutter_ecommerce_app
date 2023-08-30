@@ -58,7 +58,7 @@ class _RegisterState extends State<Register> {
                 height: 28,
               ),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   fullnameForm(inputController: _fullnameController),
                   EmailInput(inputController: _EmailController),

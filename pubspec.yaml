@@ -64,6 +64,8 @@ flutter:
   assets:
     - lib/assets/pic/
     - lib/assets/pic/iconNavBar/
+    - lib/assets/pic/category/
+    - lib/assets/pic/category/Product/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

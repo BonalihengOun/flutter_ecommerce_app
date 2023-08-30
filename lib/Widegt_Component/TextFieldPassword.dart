@@ -78,6 +78,7 @@ class _PasswordInputState extends State<PasswordInput> {
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
               focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
                 borderSide: BorderSide(color: BluePrimary, width: 1.0),
               ),
               errorBorder: const OutlineInputBorder(
@@ -85,6 +86,7 @@ class _PasswordInputState extends State<PasswordInput> {
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               enabledBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
                 borderSide: BorderSide(color: Grey, width: 1.0),
               ),
             ),

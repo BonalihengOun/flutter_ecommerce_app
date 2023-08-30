@@ -78,6 +78,7 @@ class _fullnameFormState extends State<fullnameForm> {
                   const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
               focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: BluePrimary, width: 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
               errorBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: errorColor, width: 1.0),
@@ -85,6 +86,7 @@ class _fullnameFormState extends State<fullnameForm> {
               ),
               enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Grey, width: 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
             ),
           ),

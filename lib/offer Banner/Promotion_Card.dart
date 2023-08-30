@@ -27,6 +27,8 @@ class _Promotion_1State extends State<Promotion> {
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
                 widget.image,
+                height: 220,
+                width: 350,
               ),
             ),
             Column(
