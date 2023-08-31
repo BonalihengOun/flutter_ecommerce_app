@@ -48,11 +48,11 @@ class SearchInput extends StatelessWidget {
                 color: Color.fromARGB(221, 209, 209, 209),
                 width: 1.0,
                 strokeAlign: BorderSide.strokeAlignInside),
-            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
           focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Light, width: 2.0),
-            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
           ),
         ),
       ),

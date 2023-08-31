@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/CountDownDiscount.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 
-class Promotion extends StatefulWidget {
-  const Promotion(
+class Recommend_Card extends StatefulWidget {
+  const Recommend_Card(
       {super.key,
       required this.image,
       required this.text,
@@ -13,10 +13,10 @@ class Promotion extends StatefulWidget {
   final Function() onTap;
 
   @override
-  State<Promotion> createState() => _Promotion_1State();
+  State<Recommend_Card> createState() => _Recommend_CardState();
 }
 
-class _Promotion_1State extends State<Promotion> {
+class _Recommend_CardState extends State<Recommend_Card> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -41,7 +41,7 @@ class _Promotion_1State extends State<Promotion> {
               margin: EdgeInsets.only(top: 120, left: 35),
               child: CountdownTimerWidget(
                 targetTime: DateTime.now().add(
-                  Duration(hours: 0, minutes: 0),
+                  Duration(hours: 0, minutes: 00, seconds: 1),
                 ),
               ),
             ),

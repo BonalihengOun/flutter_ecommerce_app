@@ -54,3 +54,29 @@ List<Product> product2 = [
       disPrice: 19.975,
       discount: '50%'),
 ];
+List<Product> product3 = [
+  Product(
+      name: "Animal Print 3-IN-1 CROSSBODY BAG",
+      imgaeURl: 'lib/assets/pic/category/Product/Woman Bag 1.png',
+      price: 40.00,
+      disPrice: 20,
+      discount: '50%'),
+  Product(
+      name: "Nike Air Max 270 React Big Kids' Shoe",
+      imgaeURl: 'lib/assets/pic/category/Product/Shoes 3.png',
+      price: 135.00,
+      disPrice: 67.5,
+      discount: '50%'),
+  Product(
+      name: "Charmi Card Holder",
+      imgaeURl: 'lib/assets/pic/category/Product/Woman Bag 2.png',
+      price: 39.95,
+      disPrice: 19.975,
+      discount: '50%'),
+  Product(
+      name: "Nike Air Zoom Pegasus",
+      imgaeURl: 'lib/assets/pic/category/Product/Shoes 2.png',
+      price: 39.95,
+      disPrice: 19.975,
+      discount: '50%'),
+];

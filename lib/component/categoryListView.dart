@@ -19,7 +19,7 @@ class _categoryListViewState extends State<categoryListView> {
         return Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 25, bottom: 5),
               child: GestureDetector(
                 onTap: () {
                   print("Hello");
@@ -28,9 +28,11 @@ class _categoryListViewState extends State<categoryListView> {
                   width: 70,
                   height: 70,
                   decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Grey.withOpacity(0.5)),
+                    border: Border.all(width: 2, color: Dark.withOpacity(0.3)),
                     image: DecorationImage(
-                      image: AssetImage(categories[index].imageUrl),
+                      image: AssetImage(
+                        categories[index].imageUrl,
+                      ),
                     ),
                     borderRadius: BorderRadius.all(
                       Radius.circular(66),
@@ -39,10 +41,13 @@ class _categoryListViewState extends State<categoryListView> {
                 ),
               ),
             ),
-            Text(
-              categories[index].title,
-              style: TextStyle(
-                  fontFamily: 'NiraRegular', fontSize: 10, color: Grey),
+            Padding(
+              padding: const EdgeInsets.only(left: 25, bottom: 5),
+              child: Text(
+                categories[index].title,
+                style: TextStyle(
+                    fontFamily: 'NiraRegular', fontSize: 10, color: Dark),
+              ),
             ),
           ],
         );
