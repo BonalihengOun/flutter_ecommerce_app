@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_shop_ecommerce/component/SuperFlashsaleGridView.dart';
+import 'package:flutter_sneaker_shop_ecommerce/component/Recommend_Product.GridView.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 
-class SuperFlashSale extends StatefulWidget {
-  const SuperFlashSale({super.key});
+class Recommend_product extends StatefulWidget {
+  const Recommend_product({super.key});
 
   @override
-  State<SuperFlashSale> createState() => _SuperFlashSaleState();
+  State<Recommend_product> createState() => _Recommend_productState();
 }
 
-class _SuperFlashSaleState extends State<SuperFlashSale> {
+class _Recommend_productState extends State<Recommend_product> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _SuperFlashSaleState extends State<SuperFlashSale> {
         ),
         titleSpacing: 5,
         title: Text(
-          "Super Flash Sale",
+          "Recommend Product",
           style: TextStyle(fontFamily: "NiraBold", fontSize: 16, color: Dark),
         ),
         actions: [
@@ -60,7 +60,7 @@ class _SuperFlashSaleState extends State<SuperFlashSale> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
-                              'lib/assets/pic/Promotion 1.png',
+                              'lib/assets/pic/Promotion 2.png',
                               height: 220,
                               width: 340,
                             ),
@@ -69,12 +69,24 @@ class _SuperFlashSaleState extends State<SuperFlashSale> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 30, top: 32, right: 110, bottom: 102),
+                                    left: 0, top: 50, right: 40, bottom: 30),
                                 child: Text(
-                                  'Super Flash Sale\n50%off',
+                                  'Recommend \nProduct',
                                   style: TextStyle(
                                       fontSize: 20,
                                       fontFamily: 'NiraBold',
+                                      letterSpacing: 0.5,
+                                      color: Light),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 00, left: 20),
+                                child: Text(
+                                  'We Recommend the best for you',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: 'NiraRegular',
                                       letterSpacing: 0.5,
                                       color: Light),
                                 ),
@@ -85,7 +97,7 @@ class _SuperFlashSaleState extends State<SuperFlashSale> {
                       ),
                     ),
                   ),
-                  Product_3(),
+                  Recommend_Product(),
                 ],
               ),
             ),

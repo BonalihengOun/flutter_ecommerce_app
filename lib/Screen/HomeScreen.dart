@@ -6,7 +6,6 @@ import 'package:flutter_sneaker_shop_ecommerce/component/categoryListView.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/Promotion_Card.dart';
 import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/Recommend_Card.dart';
-import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/SuperFlashSale.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -86,15 +85,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           Promotion(
                             text: '\tSuper Flash Sale\n 50% off',
                             image: 'lib/assets/pic/Promotion 1.png',
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SuperFlashSale()),
-                              );
-                            },
+                            onTap: () {},
                           ),
-                          Recommend_Card(
+                          Recommend(
                             text: 'Recommended \nProduct',
                             image: 'lib/assets/pic/Promotion 2.png',
                             onTap: () {},
