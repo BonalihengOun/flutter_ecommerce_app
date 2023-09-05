@@ -17,14 +17,17 @@ class _Recommend_productState extends State<Recommend_product> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          splashRadius: 20,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Image.asset(
-            'lib/assets/pic/Left.png',
-            color: Grey,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: IconButton(
+            splashRadius: 20,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Image.asset(
+              'lib/assets/pic/Left.png',
+              color: Grey,
+            ),
           ),
         ),
         titleSpacing: 5,
@@ -33,10 +36,20 @@ class _Recommend_productState extends State<Recommend_product> {
           style: TextStyle(fontFamily: "NiraBold", fontSize: 16, color: Dark),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            alignment: Alignment(-4, 0),
-            icon: Image.asset("lib/assets/pic/iconNavBar/Search.png"),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Ink(
+              decoration: ShapeDecoration(
+                color: Colors
+                    .transparent, // Set the background color to transparent
+                shape: CircleBorder(), // Customize the shape as needed
+              ),
+              child: IconButton(
+                splashRadius: 18,
+                onPressed: () {},
+                icon: Image.asset('lib/assets/pic/iconNavBar/Search.png'),
+              ),
+            ),
           ),
         ],
       ),

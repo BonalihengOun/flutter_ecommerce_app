@@ -27,10 +27,10 @@ List<Product> product1 = [
       disPrice: 17.25,
       discount: '50%'),
   Product(
-      name: "Nike Men's React Infinity Run Flyknit",
-      imgaeURl: 'lib/assets/pic/category/Product/Shoes 4.png',
-      price: 175.00,
-      disPrice: 87.5,
+      name: "Nike Infinity Run Shoes",
+      imgaeURl: 'lib/assets/pic/category/Product/Nike runner_whitebrown.png',
+      price: 190.00,
+      disPrice: 90.00,
       discount: '50%'),
 ];
 List<Product> product2 = [
@@ -99,10 +99,10 @@ List<Product> product4 = [
       disPrice: 19.975,
       discount: '50%'),
   Product(
-      name: "Nike Men's React Infinity Run Flyknit",
-      imgaeURl: 'lib/assets/pic/category/Product/Shoes 4.png',
-      price: 175.00,
-      disPrice: 87.5,
+      name: "Nike Infinity Run Shoes",
+      imgaeURl: 'lib/assets/pic/category/Product/Nike runner_whitebrown.png',
+      price: 190.00,
+      disPrice: 90.00,
       discount: '50%'),
 ];
 List<Product> Product_all = [

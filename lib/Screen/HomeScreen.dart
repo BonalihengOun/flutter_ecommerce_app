@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_shop_ecommerce/component/ProductListView%202.dart';
-import 'package:flutter_sneaker_shop_ecommerce/component/ProductListView.dart';
-import 'package:flutter_sneaker_shop_ecommerce/component/SearchWidget.dart';
+import 'package:flutter_sneaker_shop_ecommerce/component/ProductListView_2.dart';
+import 'package:flutter_sneaker_shop_ecommerce/component/ProductListView_1.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/SearchWidget.dart';
 import 'package:flutter_sneaker_shop_ecommerce/component/categoryListView.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/Promotion_Card.dart';

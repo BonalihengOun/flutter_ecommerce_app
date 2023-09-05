@@ -33,10 +33,20 @@ class _SuperFlashSaleState extends State<SuperFlashSale> {
           style: TextStyle(fontFamily: "NiraBold", fontSize: 16, color: Dark),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            alignment: Alignment(-4, 0),
-            icon: Image.asset("lib/assets/pic/iconNavBar/Search.png"),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Ink(
+              decoration: ShapeDecoration(
+                color: Colors
+                    .transparent, // Set the background color to transparent
+                shape: CircleBorder(), // Customize the shape as needed
+              ),
+              child: IconButton(
+                splashRadius: 18,
+                onPressed: () {},
+                icon: Image.asset('lib/assets/pic/iconNavBar/Search.png'),
+              ),
+            ),
           ),
         ],
       ),

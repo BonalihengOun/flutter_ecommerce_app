@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_shop_ecommerce/component/ProductDetailPage.dart';
+import 'package:flutter_sneaker_shop_ecommerce/component/All_Product_detail/ProductDetail.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 
 import '../constants/colors.dart';
@@ -12,6 +12,7 @@ class Product_1 extends StatefulWidget {
 }
 
 class _Product_1State extends State<Product_1> {
+    
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,11 +23,10 @@ class _Product_1State extends State<Product_1> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              // Navigate to ProductDetailPage using Navigator
-              Navigator.push(
+             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProductDetailPage(index: index),
+                  builder: (context) => ProductDetail1(product: product1[index]),
                 ),
               );
             },
