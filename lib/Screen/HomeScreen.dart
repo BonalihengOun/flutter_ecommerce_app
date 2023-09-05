@@ -46,23 +46,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           IconButton(
                             onPressed: () {},
-                            splashRadius: 1.5,
-                            alignment: Alignment(1, 0),
+                            splashRadius: 20.5,
                             icon: Icon(
                               Icons.favorite_border,
                               color: Grey,
                               size: 24,
                             ),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            splashRadius: 1.5,
-                            autofocus: EditableText.debugDeterministicCursor,
-                            alignment: Alignment(-2, 0),
-                            icon: Image.asset(
-                              'lib/assets/pic/NotificationIcon.png',
-                              width: 24,
-                              height: 24,
+                          Padding(
+                            padding: const EdgeInsets.only(right: 5),
+                            child: IconButton(
+                              onPressed: () {},
+                              splashRadius: 20.5,
+                              autofocus: EditableText.debugDeterministicCursor,
+                              icon: Image.asset(
+                                'lib/assets/pic/NotificationIcon.png',
+                                width: 24,
+                                height: 24,
+                              ),
                             ),
                           ),
                         ],

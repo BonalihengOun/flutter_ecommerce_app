@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class selectSized extends StatefulWidget {
-  const selectSized({super.key});
+  final String type;
+  const selectSized({super.key, required this.type});
 
   @override
   State<selectSized> createState() => _selectSizedState();
@@ -12,7 +13,7 @@ class selectSized extends StatefulWidget {
 class _selectSizedState extends State<selectSized> {
   String selectedSize = "Select Size";
   // Initially, no size is selected
-  final List<String> availableSizes = [
+  final List<String> availableSizesForShoes = [
     "37",
     "38",
     "39",
@@ -24,6 +25,8 @@ class _selectSizedState extends State<selectSized> {
     "45",
     "46"
   ];
+  final List<String> availableSizesForbag = ["S", "M", "L"];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,9 +34,13 @@ class _selectSizedState extends State<selectSized> {
       margin: EdgeInsets.only(left: 10),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: availableSizes.length,
+        itemCount: widget.type == 'bag'
+            ? availableSizesForbag.length
+            : availableSizesForShoes.length,
         itemBuilder: (context, index) {
-          final size = availableSizes[index];
+          final size = widget.type == 'bag'
+              ? availableSizesForbag[index]
+              : availableSizesForShoes[index];
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: ElevatedButton(

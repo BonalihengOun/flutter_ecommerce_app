@@ -12,7 +12,6 @@ class Product_1 extends StatefulWidget {
 }
 
 class _Product_1State extends State<Product_1> {
-    
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,10 +22,11 @@ class _Product_1State extends State<Product_1> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-             Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProductDetail1(product: product1[index]),
+                  builder: (context) =>
+                      ProductDetail1(product: product1[index]),
                 ),
               );
             },
@@ -37,59 +37,61 @@ class _Product_1State extends State<Product_1> {
                 border: Border.all(width: 1, color: Grey.withOpacity(0.2)),
               ),
               padding: EdgeInsets.all(5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      child: Image.asset(product1[index].imgaeURl),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        child: Image.asset(product1[index].imgaeURl),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          product1[index].name,
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: 'NiraSemi',
-                              color: Dark),
-                        ),
-                        Text(
-                          '\$' + product1[index].price.toString(),
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: 'NiraSemi',
-                              color: BluePrimary),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              product1[index].disPrice.toString(),
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'NiraSemi',
-                                  color: Grey,
-                                  decoration: TextDecoration.lineThrough),
-                            ),
-                            SizedBox(width: 8),
-                            Text(
-                              product1[index].discount.toString() + 'Off',
-                              style: TextStyle(
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            product1[index].name,
+                            style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: 'NiraSemi',
-                                color: RedPrimary,
+                                color: Dark),
+                          ),
+                          Text(
+                            '\$' + product1[index].price.toString(),
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: 'NiraSemi',
+                                color: BluePrimary),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                product1[index].disPrice.toString(),
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'NiraSemi',
+                                    color: Grey,
+                                    decoration: TextDecoration.lineThrough),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              SizedBox(width: 8),
+                              Text(
+                                product1[index].discount.toString() + 'Off',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'NiraSemi',
+                                  color: RedPrimary,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
