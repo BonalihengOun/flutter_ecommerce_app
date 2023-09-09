@@ -45,11 +45,17 @@ class _Offer_screenState extends State<Offer_screen> {
                 children: [
                   Stack(
                     children: [
-                      Image.asset(''),
+                      Center(
+                        child: Container(
+                            height: 650,
+                            child:
+                                Image.asset('lib/assets/pic/banner/NIKE.png')),
+                      ),
                       Center(
                         child: Container(
                           width: 340,
                           height: 80,
+                          margin: EdgeInsets.only(top: 30),
                           decoration: BoxDecoration(
                             color: Dark,
                             borderRadius: BorderRadius.circular(8),

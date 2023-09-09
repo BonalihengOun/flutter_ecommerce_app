@@ -76,24 +76,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Column(
                   children: [
-                    SizedBox(
-                      height: 220,
-                      width: 350,
-                      child: PageView(
-                        controller: Controller,
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          Promotion(
-                            text: 'Discount Upto 50%',
-                            image: 'lib/assets/pic/Promotion 1.png',
-                            onTap: () {},
-                          ),
-                          Recommend(
-                            text: 'Recommended \nProduct for you',
-                            image: 'lib/assets/pic/Promotion 2.png',
-                            onTap: () {},
-                          ),
-                        ],
+                    Center(
+                      child: Container(
+                        height: 200,
+                        width: 400,
+                        child: PageView(
+                          controller: Controller,
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            Promotion(
+                              image: 'lib/assets/pic/banner/bannerDiscount.png',
+                            ),
+                            Recommend(
+                                image:
+                                    'lib/assets/pic/banner/bannerRecommend.png'),
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
