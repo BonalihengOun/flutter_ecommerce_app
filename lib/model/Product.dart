@@ -167,7 +167,7 @@ List<Product> sportswear = [
   Product(
       name: "Nike Sportswear Heritage86 Futura",
       imgaeURl1:
-          'lib/assets/pic/category/Product/Sportswear/Nike Sportswear Heritage86 Futura Washed_GreenLight.png',
+          'lib/assets/pic/category/Product/Sportwear/Nike Sportswear Heritage86 Futura Washed_GreenLight.png',
       imgURL2:
           'lib/assets/pic/category/product/Sportwear/Nike Sportswear Heritage86 Futura Washed_Pink.png',
       imgURL3:
