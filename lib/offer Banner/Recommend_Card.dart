@@ -48,8 +48,10 @@ class _RecommendState extends State<Recommend> {
                 ],
               ),
             ),
-            Image.asset(
-              'lib/assets/pic/banner/Yellow Shoe.png',
+            Container(
+              child: Image.asset(
+                'lib/assets/pic/banner/Yellow Shoe.png',
+              ),
             ),
           ],
         ),
