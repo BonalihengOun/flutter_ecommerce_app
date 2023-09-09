@@ -213,6 +213,27 @@ List<Product> sportswear = [
     describtion:
         "Made from soft French terry fleece for warmth and comfort, this Nike SB hoodie features our signature box logo front and centre. The skate-ready fit is roomy through the chest, shoulders and body for easy movement and layering. Skate hard, lounge easy. ",
   ),
+  Product(
+    name: "Nike Sportswear Tech Fleece Windrunner",
+    imgaeURl1:
+        'lib/assets/pic/category/Product/SportWears/sportswear_tech_fleece_windrunner_mens_full_zip_hoodie_rznlBf.jpeg',
+    price: 145.00,
+    colorshown_1: 'Coconut Milk/Black',
+    styleColor1: 'FB7921-113',
+    type: 'men_hoodie',
+    describtion:
+        "Blending 2 of our most iconic looks, this full-zip hoodie draws design inspiration from our timeless Windrunner jacket as well as our Tech Fleece jacket.",
+  ),
+  Product(
+      name: "Nike Sportswear Tech Fleece OG",
+      imgaeURl1:
+          'lib/assets/pic/category/Product/SportWears/sportswear-tech-fleece-og-womens-loose-cape-S4zv0w.jpeg',
+      price: 150.00,
+      colorshown_1: 'Dark Grey Heather/Black',
+      styleColor1: 'FN4164-063',
+      type: 'women_hoodie',
+      describtion:
+          "Can you believe it's already been 10 years of Tech Fleece? We’re celebrating the occasion by bringing back the tailored lines and sleek details from the original design. Our premium, lightweight fleece–smooth both inside and out–gives you plenty of warmth without adding bulk.Complete your look with matching joggers or your favorite pair of leggings. The future of fleece starts here."),
 ];
 List<Product> shoes_football = [
   Product(
