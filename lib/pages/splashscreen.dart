@@ -31,12 +31,12 @@ class _splashscreenState extends State<splashscreen>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: BluePrimary,
+        backgroundColor: Dark,
         body: Center(
           child: Container(
             width: 72,
             height: 72,
-            child: Image.asset('lib/assets/pic/Iconapp.png'),
+            child: Image.asset('lib/assets/pic/Icon App/single icon Blue.png'),
           ),
         ),
       ),

@@ -57,7 +57,10 @@ class _EmailInputState extends State<EmailInput> {
                 fontSize: 16, fontFamily: 'NiraBold', color: Grey),
             decoration: InputDecoration(
               prefixIcon: _hasText
-                  ? Image.asset('lib/assets/pic/IconBlue.png')
+                  ? Image.asset(
+                      'lib/assets/pic/IconBlue.png',
+                      color: Dark,
+                    )
                   : Image.asset('lib/assets/pic/Group.png'),
               filled: true,
               fillColor: accentColor,
@@ -69,7 +72,7 @@ class _EmailInputState extends State<EmailInput> {
                   const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
               focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(8)),
-                borderSide: BorderSide(color: BluePrimary, width: 1.0),
+                borderSide: BorderSide(color: Dark, width: 1.0),
               ),
               errorBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: errorColor, width: 1.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_sneaker_shop_ecommerce/component/All_Product_detail/ProductDetail.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 
@@ -15,10 +16,10 @@ class _Product_2State extends State<Product_2> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 265,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: product2.length,
+        itemCount: nike_air_jordan.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
@@ -26,13 +27,14 @@ class _Product_2State extends State<Product_2> {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProductDetail1(product: product2[index]),
+                      ProductDetail1(product: nike_air_jordan[index]),
                 ),
               );
             },
             child: Container(
               width: 150,
               decoration: BoxDecoration(
+                color: Grey.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(width: 1, color: Grey.withOpacity(0.2)),
               ),
@@ -42,10 +44,15 @@ class _Product_2State extends State<Product_2> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        child: Image.asset(
-                          product2[index].imgaeURl,
+                      padding: const EdgeInsets.all(6.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Container(
+                          height: 130,
+                          width: 120,
+                          child: Image.asset(
+                            nike_air_jordan[index].imgaeURl1,
+                          ),
                         ),
                       ),
                     ),
@@ -55,23 +62,44 @@ class _Product_2State extends State<Product_2> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            product2[index].name,
+                            nike_air_jordan[index].name,
                             style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: 'NiraSemi',
                                 color: Dark),
                           ),
+                          RatingBar.builder(
+                            initialRating: 3.5,
+                            minRating: 1,
+                            itemSize: 13,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
                           Text(
-                            '\$' + product2[index].price.toString(),
+                            '\$' + nike_air_jordan[index].price.toString(),
                             style: TextStyle(
-                                fontSize: 12,
-                                fontFamily: 'NiraSemi',
-                                color: BluePrimary),
+                                fontSize: 15,
+                                fontFamily: 'NiraBold',
+                                color: Dark),
+                          ),
+                          SizedBox(
+                            height: 5,
                           ),
                           Row(
                             children: [
                               Text(
-                                product2[index].disPrice.toString(),
+                                nike_air_jordan[index].disPrice.toString(),
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontFamily: 'NiraSemi',
@@ -80,7 +108,8 @@ class _Product_2State extends State<Product_2> {
                               ),
                               SizedBox(width: 8),
                               Text(
-                                product2[index].discount.toString() + 'Off',
+                                nike_air_jordan[index].discount.toString() +
+                                    'Off',
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontFamily: 'NiraSemi',

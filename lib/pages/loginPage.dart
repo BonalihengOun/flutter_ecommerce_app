@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Center(
                 child: Image.asset(
-                  'lib/assets/pic/Icon.png',
+                  'lib/assets/pic/Icon App/single iconBlue.png',
                   width: 72,
                   height: 72,
                 ),
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     height: 1,
                     width: 100,
-                    color: BluePrimary.withOpacity(0.3),
+                    color: Dark.withOpacity(0.3),
                   ),
                   SizedBox(
                     width: 5,
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     height: 1,
                     width: 100,
-                    color: BluePrimary.withOpacity(0.3),
+                    color: Dark.withOpacity(0.3),
                   ),
                 ],
               ),
@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                       fontFamily: 'NiraBold',
                       fontSize: 12,
-                      color: BluePrimary,
+                      color: Dark,
                       letterSpacing: 0.5),
                 ),
               ),

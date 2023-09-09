@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
             children: [
               Center(
                 child: Image.asset(
-                  'lib/assets/pic/Icon.png',
+                  'lib/assets/pic/Icon App/single iconBlue.png',
                   width: 72,
                   height: 72,
                 ),

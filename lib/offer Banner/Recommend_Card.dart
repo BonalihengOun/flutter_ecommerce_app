@@ -19,52 +19,54 @@ class Recommend extends StatefulWidget {
 class _RecommendState extends State<Recommend> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: widget.onTap,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
+    return Center(
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
           ),
-        ),
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                widget.image,
-                height: 220,
-                width: 340,
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  widget.image,
+                  height: 220,
+                  width: 340,
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 120, left: 35),
-              child: CountdownTimerWidget(
-                targetTime: DateTime.now().add(
-                  Duration(
-                    hours: 0,
-                    minutes: 0,
+              Container(
+                margin: EdgeInsets.only(top: 120, left: 35),
+                child: CountdownTimerWidget(
+                  targetTime: DateTime.now().add(
+                    Duration(
+                      hours: 0,
+                      minutes: 0,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 30, top: 32, right: 110, bottom: 102),
-                  child: Text(
-                    widget.text,
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'NiraBold',
-                        letterSpacing: 0.5,
-                        color: Light),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 30, top: 32, right: 110, bottom: 102),
+                    child: Text(
+                      widget.text,
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'NiraBold',
+                          letterSpacing: 0.5,
+                          color: Light),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

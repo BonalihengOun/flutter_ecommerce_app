@@ -26,7 +26,7 @@ class SignInButton extends StatelessWidget {
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: BluePrimary,
+        color: Dark,
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: ElevatedButton(

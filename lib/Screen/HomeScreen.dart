@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 25, top: 12),
+                  padding: const EdgeInsets.only(left: 20, top: 12),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         count: 2,
                         effect: WormEffect(
                           type: WormType.underground,
-                          activeDotColor: BluePrimary.withOpacity(0.8),
+                          activeDotColor: Dark.withOpacity(0.8),
                           dotHeight: 10,
                           dotWidth: 10,
                           dotColor: Grey,
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(
                               fontFamily: 'NiraBold',
                               fontSize: 14,
-                              color: BluePrimary),
+                              color: Dark),
                         ),
                       ),
                     ],
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(
                               fontFamily: 'NiraBold',
                               fontSize: 14,
-                              color: BluePrimary),
+                              color: Dark),
                         ),
                       ),
                     ],
@@ -189,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                     fontFamily: 'NiraBold',
                                     fontSize: 14,
-                                    color: BluePrimary),
+                                    color: Dark),
                               ),
                             ),
                           ],

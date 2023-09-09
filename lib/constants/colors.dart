@@ -7,7 +7,7 @@ const Color YellowPrimary = Color(0xffFFC833);
 const Color GreenPrimary = Color(0xff53D1B6);
 
 //Neutral
-
+const Color PeopleSkin = Color(0xffF6F6F6);
 const Color Dark = Color(0xff213263);
 const Color Grey = Color(0xff9198B1);
 const Color Light = Color(0xffEBF0FF);

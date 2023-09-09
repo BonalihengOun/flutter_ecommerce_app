@@ -65,9 +65,16 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/assets/pic/
+    - lib/assets/pic/Icon App/
     - lib/assets/pic/iconNavBar/
-    - lib/assets/pic/category/
-    - lib/assets/pic/category/Product/
+    - lib/assets/pic/category/Product/Nike_infinity_colors/
+    - lib/assets/pic/category/Product/Nike_Pegasus_colors/
+    - lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/
+    - lib/assets/pic/category/Product/Nike_runner_colors/
+    - lib/assets/pic/category/Product/SportWears/
+    - lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/
+    - lib/assets/pic/category/categoryIcon/
+    - lib/assets/pic/category/Product/Nike Air Jordan/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

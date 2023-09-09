@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_sneaker_shop_ecommerce/component/All_Product_detail/ProductDetail.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 
@@ -15,10 +16,10 @@ class _Product_1State extends State<Product_1> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 265,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: product1.length,
+        itemCount: productMen.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
@@ -26,15 +27,16 @@ class _Product_1State extends State<Product_1> {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ProductDetail1(product: product1[index]),
+                      ProductDetail1(product: productMen[index]),
                 ),
               );
             },
             child: Container(
               width: 150,
               decoration: BoxDecoration(
+                color: Colors.amber,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(width: 1, color: Grey.withOpacity(0.2)),
+                border: Border.all(width: 1, color: Grey.withOpacity(0.1)),
               ),
               padding: EdgeInsets.all(5),
               child: SingleChildScrollView(
@@ -42,9 +44,11 @@ class _Product_1State extends State<Product_1> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(12.0),
                       child: Container(
-                        child: Image.asset(product1[index].imgaeURl),
+                        height: 130,
+                        width: 120,
+                        child: Image.asset(productMen[index].imgaeURl1),
                       ),
                     ),
                     Padding(
@@ -53,23 +57,44 @@ class _Product_1State extends State<Product_1> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            product1[index].name,
+                            productMen[index].name,
                             style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: 'NiraSemi',
                                 color: Dark),
                           ),
+                          RatingBar.builder(
+                            initialRating: 3.5,
+                            minRating: 1,
+                            itemSize: 13,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemBuilder: (context, _) => Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              print(rating);
+                            },
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
                           Text(
-                            '\$' + product1[index].price.toString(),
+                            '\$' + productMen[index].price.toString(),
                             style: TextStyle(
-                                fontSize: 12,
-                                fontFamily: 'NiraSemi',
-                                color: BluePrimary),
+                                fontSize: 15,
+                                fontFamily: 'NiraBold',
+                                color: Dark),
+                          ),
+                          SizedBox(
+                            height: 5,
                           ),
                           Row(
                             children: [
                               Text(
-                                product1[index].disPrice.toString(),
+                                productMen[index].disPrice.toString(),
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontFamily: 'NiraSemi',
@@ -78,7 +103,7 @@ class _Product_1State extends State<Product_1> {
                               ),
                               SizedBox(width: 8),
                               Text(
-                                product1[index].discount.toString() + 'Off',
+                                productMen[index].discount.toString() + 'Off',
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontFamily: 'NiraSemi',

@@ -22,11 +22,6 @@ class _Promotion_1State extends State<Promotion> {
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
-        ),
         child: Stack(
           children: [
             ClipRRect(

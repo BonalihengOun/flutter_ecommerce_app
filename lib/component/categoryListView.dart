@@ -25,11 +25,12 @@ class _categoryListViewState extends State<categoryListView> {
                   print("Hello");
                 },
                 child: Container(
-                  width: 70,
-                  height: 70,
+                  width: 75,
+                  height: 75,
                   decoration: BoxDecoration(
-                    border: Border.all(width: 2, color: Dark.withOpacity(0.3)),
+                    border: Border.all(width: 1, color: Dark.withOpacity(1)),
                     image: DecorationImage(
+                      scale: Checkbox.width,
                       image: AssetImage(
                         categories[index].imageUrl,
                       ),
@@ -46,7 +47,10 @@ class _categoryListViewState extends State<categoryListView> {
               child: Text(
                 categories[index].title,
                 style: TextStyle(
-                    fontFamily: 'NiraRegular', fontSize: 10, color: Dark),
+                  fontFamily: 'NiraRegular',
+                  fontSize: 10,
+                  color: Dark,
+                ),
               ),
             ),
           ],

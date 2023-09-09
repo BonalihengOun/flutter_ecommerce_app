@@ -55,7 +55,7 @@ class NavBar extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10),
           child: CustomNavigationBar(
             iconSize: 25,
-            strokeColor: BluePrimary.withOpacity(0.1),
+            strokeColor: Dark.withOpacity(0.1),
             scaleCurve: Curves.bounceIn,
             backgroundColor: Colors.white,
             elevation: 0,
@@ -64,7 +64,7 @@ class NavBar extends StatelessWidget {
                 icon: currentIndex == 0
                     ? Image.asset(
                         'lib/assets/pic/iconNavBar/Home.png',
-                        color: BluePrimary,
+                        color: Dark,
                       )
                     : Image.asset(
                         'lib/assets/pic/iconNavBar/Home.png',
@@ -73,9 +73,7 @@ class NavBar extends StatelessWidget {
                     ? Text(
                         "Home",
                         style: TextStyle(
-                            fontFamily: 'NiraBold',
-                            fontSize: 12,
-                            color: BluePrimary),
+                            fontFamily: 'NiraBold', fontSize: 12, color: Dark),
                       )
                     : Text(
                         "Home",
@@ -88,16 +86,15 @@ class NavBar extends StatelessWidget {
               CustomNavigationBarItem(
                 icon: currentIndex == 1
                     ? Image.asset(
-                        'lib/assets/pic/iconNavBar/SearchBlue.png',
+                        'lib/assets/pic/iconNavBar/Search.png',
+                        color: Dark,
                       )
                     : Image.asset('lib/assets/pic/iconNavBar/Search.png'),
                 title: currentIndex == 1
                     ? Text(
                         "Explore",
                         style: TextStyle(
-                            fontFamily: 'NiraBold',
-                            fontSize: 12,
-                            color: BluePrimary),
+                            fontFamily: 'NiraBold', fontSize: 12, color: Dark),
                       )
                     : Text(
                         "Explore",
@@ -110,16 +107,15 @@ class NavBar extends StatelessWidget {
               CustomNavigationBarItem(
                 icon: currentIndex == 2
                     ? Image.asset(
-                        'lib/assets/pic/iconNavBar/CardBlue.png',
+                        'lib/assets/pic/iconNavBar/Card.png',
+                        color: Dark,
                       )
                     : Image.asset('lib/assets/pic/iconNavBar/Card.png'),
                 title: currentIndex == 2
                     ? Text(
                         "Cart",
                         style: TextStyle(
-                            fontFamily: 'NiraBold',
-                            fontSize: 12,
-                            color: BluePrimary),
+                            fontFamily: 'NiraBold', fontSize: 12, color: Dark),
                       )
                     : Text(
                         "Cart",
@@ -132,16 +128,15 @@ class NavBar extends StatelessWidget {
               CustomNavigationBarItem(
                 icon: currentIndex == 3
                     ? Image.asset(
-                        'lib/assets/pic/iconNavBar/OfferBlue.png',
+                        'lib/assets/pic/iconNavBar/Offer.png',
+                        color: Dark,
                       )
                     : Image.asset('lib/assets/pic/iconNavBar/Offer.png'),
                 title: currentIndex == 3
                     ? Text(
                         "Offer",
                         style: TextStyle(
-                            fontFamily: 'NiraBold',
-                            fontSize: 12,
-                            color: BluePrimary),
+                            fontFamily: 'NiraBold', fontSize: 12, color: Dark),
                       )
                     : Text(
                         "Offer",
@@ -155,7 +150,7 @@ class NavBar extends StatelessWidget {
                 icon: currentIndex == 4
                     ? Image.asset(
                         'lib/assets/pic/iconNavBar/Account.png',
-                        color: BluePrimary,
+                        color: Dark,
                       )
                     : Image.asset('lib/assets/pic/iconNavBar/Account.png'),
                 title: currentIndex == 4
@@ -166,7 +161,7 @@ class NavBar extends StatelessWidget {
                           style: TextStyle(
                               fontFamily: 'NiraBold',
                               fontSize: 12,
-                              color: BluePrimary),
+                              color: Dark),
                         ),
                       )
                     : Padding(

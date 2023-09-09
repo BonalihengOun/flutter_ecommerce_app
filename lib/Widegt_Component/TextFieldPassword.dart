@@ -13,6 +13,20 @@ class PasswordInput extends StatefulWidget {
 
 class _PasswordInputState extends State<PasswordInput> {
   bool _isObscured = true;
+  bool _hasText1 = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Listen for changes in the text field
+    widget.inputController.addListener(_updateHasText);
+  }
+
+  void _updateHasText() {
+    setState(() {
+      _hasText1 = widget.inputController.text.isNotEmpty;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +67,26 @@ class _PasswordInputState extends State<PasswordInput> {
             style: const TextStyle(
                 fontSize: 16, fontFamily: 'NiraBold', color: Grey),
             decoration: InputDecoration(
-              prefixIcon: Padding(
-                padding: const EdgeInsets.only(right: 13),
-                child: Image.asset(
-                  'lib/assets/pic/IconLock.png',
-                  alignment: Alignment(0.5, 0),
-                ),
-              ),
+              prefixIcon: _hasText1
+                  ? Padding(
+                      padding: const EdgeInsets.only(right: 13),
+                      child: Image.asset(
+                        'lib/assets/pic/IconLock.png',
+                        color: Dark,
+                        alignment: Alignment(0.4, 0),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.only(right: 13),
+                      child: Image.asset(
+                        'lib/assets/pic/IconLock.png',
+                        alignment: Alignment(0.4, 0),
+                      ),
+                    ),
               suffixIcon: IconButton(
-                icon:
-                    Icon(_isObscured ? Icons.visibility_off : Icons.visibility),
+                icon: Icon(
+                  _isObscured ? Icons.visibility_off : Icons.visibility,
+                ),
                 onPressed: () {
                   setState(() {
                     _isObscured = !_isObscured; // Toggle password visibility
@@ -79,7 +103,7 @@ class _PasswordInputState extends State<PasswordInput> {
                   const EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
               focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(8)),
-                borderSide: BorderSide(color: BluePrimary, width: 1.0),
+                borderSide: BorderSide(color: Dark, width: 1.0),
               ),
               errorBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: errorColor, width: 1.0),

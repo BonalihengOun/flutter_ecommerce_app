@@ -6,25 +6,15 @@ class Category {
 }
 
 List<Category> categories = [
-  Category(title: 'Main Shirt', imageUrl: 'lib/assets/pic/category/shirt.png'),
-  Category(title: 'Dress', imageUrl: 'lib/assets/pic/category/dress.png'),
   Category(
-      title: 'Woman Bag', imageUrl: 'lib/assets/pic/category/woman bag.png'),
+      title: 'Sneaker',
+      imageUrl: 'lib/assets/pic/category/categoryIcon/sneakers.png'),
   Category(
-      title: 'Man T-Shirt', imageUrl: 'lib/assets/pic/category/Tshirt.png'),
+      title: 'Sport-Clothes',
+      imageUrl: 'lib/assets/pic/category/categoryIcon/sport-clothes.png'),
   Category(
-      title: 'Woman Pants',
-      imageUrl: 'lib/assets/pic/category/woman pants.png'),
-  Category(
-      title: 'Man underwear',
-      imageUrl: 'lib/assets/pic/category/man underwear.png'),
-  Category(title: 'Bikini', imageUrl: 'lib/assets/pic/category/bikini.png'),
-  Category(
-      title: 'Woman T-Shirt',
-      imageUrl: 'lib/assets/pic/category/woman tshirt.png'),
-  Category(title: 'Skirt', imageUrl: 'lib/assets/pic/category/skirt.png'),
-  Category(
-      title: 'Man Shoes', imageUrl: 'lib/assets/pic/category/man shoes.png'),
-  Category(title: 'Man Bag', imageUrl: 'lib/assets/pic/category/man bag.png'),
+      title: 'Shoes-football',
+      imageUrl: 'lib/assets/pic/category/categoryIcon/footballicon.png'),
+
   // Add more categories here
 ];
