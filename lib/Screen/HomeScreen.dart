@@ -32,6 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Stack(children: [
           SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 12),
@@ -76,22 +78,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Column(
                   children: [
-                    Center(
-                      child: Container(
-                        height: 200,
-                        width: 400,
-                        child: PageView(
-                          controller: Controller,
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Promotion(
-                              image: 'lib/assets/pic/banner/bannerDiscount.png',
-                            ),
-                            Recommend(
-                                image:
-                                    'lib/assets/pic/banner/bannerRecommend.png'),
-                          ],
-                        ),
+                    Container(
+                      height: 220,
+                      child: PageView(
+                        controller: Controller,
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Promotion(
+                            image: 'lib/assets/pic/banner/bannerDiscount.png',
+                          ),
+                          Recommend(
+                              image:
+                                  'lib/assets/pic/banner/bannerRecommend.png'),
+                        ],
                       ),
                     ),
                     Padding(
