@@ -5,7 +5,7 @@ class Product {
   final double? disPrice;
   final String? discount;
   final String? type;
-  final String? typecolor;
+  final String? type1;
   final String describtion;
   final String? styleColor4;
   final String colorshown_1;
@@ -43,7 +43,7 @@ class Product {
       this.styleColor2,
       this.styleColor3,
       this.styleColor4,
-      this.typecolor,
+      this.type1,
       required this.styleColor1,
       required this.colorshown_1,
       this.discount});
@@ -74,7 +74,7 @@ List<Product> productMen = [
       color2: '0xffDFEBB7',
       color3: '0xffBDCED6',
       color4: '0xff100B11',
-      typecolor: 'Shoes',
+      type1: 'Shoes',
       describtion:
           "Nike InfinityRN 4 is a brand-new take on a familiar favourite.\tIt's made from our all-new Nike ReactX foam, which gives you 13% more energy return compared with Nike React foam, to help you stay fresh and bouncy. (What's more? Nike ReactX reduces the carbon footprint of the midsole by at least 43% compared with Nike React foam, so it helps support the planet, too).",
       discount: '24%'),
@@ -102,7 +102,7 @@ List<Product> productMen = [
       color2: '0xffD9414E',
       color3: '0xffEEEFF5',
       color4: '0xffAFB792',
-      typecolor: 'Shoes',
+      type1: 'Shoes',
       describtion:
           "A springy ride for any run, the Peg’s familiar,\n just-for-you feel returns to help you accomplish your goals. \nThis version has the same responsiveness and neutral support you love, \nbut with improved comfort in those sensitive areas of your foot,\nlike the arch and toes. Whether you’re logging long marathon miles, squeezing in a speed session before the sun goes down or hopping into a spontaneous group jaunt,\nit’s still the established road runner you can put your faith in, day after day, run after run.",
       discount: '24%'),
@@ -130,7 +130,7 @@ List<Product> productMen = [
       color2: '0xff4673AF',
       color3: '0xffD74F93',
       color4: '0xffB8EEE5',
-      typecolor: 'Shoes',
+      type1: 'Shoes',
       describtion:
           'With supportive cushioning built for a smooth run, the Infinity RN 4 helps you hit the ground running. With personalization options all over and enough color combinations to make your head spin, the Infinity RN 4 By You can help you run and stunt all day. From the Flyknit to Swoosh designs and midsole, it’s ready for your eccentric touch too.',
       discount: '24%'),
@@ -158,7 +158,7 @@ List<Product> productMen = [
       color2: '0xff910106',
       color3: '0xff79E6F3',
       color4: '0xff424443',
-      typecolor: 'Shoes',
+      type1: 'Shoes',
       describtion:
           "Have you ever walked on Air? Step into the Air VaporMax 2023 to see how it's done. The innovative tech is revealed through the perforated sockliner (pull it out to see more). The stretchy Flyknit upper is made from at least 20% recycled content by weight.",
       discount: '24%'),
@@ -189,6 +189,7 @@ List<Product> sportswear = [
       color3: '0xffBB7FB5',
       color4: '0xff23272B',
       type: 'Hat',
+      type1: 'sportwear',
       describtion:
           "Crafted from soft fabric, the Nike Sportswear Heritage86 Futura Washed Hat has a 6-panel design for classic comfort and an adjustable closure for a personalized fit.",
       discount: '10%'),
@@ -200,6 +201,7 @@ List<Product> sportswear = [
     colorshown_1: 'Light Grey/Heather/Black',
     styleColor1: 'FN7124-013',
     type: 'Women_hoodie',
+    type1: 'sportwear',
     describtion:
         "Can you believe it's already been 10 years of Tech Fleece? We're celebrating the occasion with a modern silhouette and a colour palette inspired by natural minerals. Since 2013, our premium, lightweight fleece is smooth both inside and out—giving you plenty of warmth without unnecessary bulk. ",
   ),
@@ -210,6 +212,7 @@ List<Product> sportswear = [
     colorshown_1: 'University Gold',
     styleColor1: 'DV8840-739',
     type: 'men_hoodie',
+    type1: 'sportwear',
     describtion:
         "Made from soft French terry fleece for warmth and comfort, this Nike SB hoodie features our signature box logo front and centre. The skate-ready fit is roomy through the chest, shoulders and body for easy movement and layering. Skate hard, lounge easy. ",
   ),
@@ -221,6 +224,7 @@ List<Product> sportswear = [
     colorshown_1: 'Coconut Milk/Black',
     styleColor1: 'FB7921-113',
     type: 'men_hoodie',
+    type1: 'sportwear',
     describtion:
         "Blending 2 of our most iconic looks, this full-zip hoodie draws design inspiration from our timeless Windrunner jacket as well as our Tech Fleece jacket.",
   ),
@@ -232,6 +236,7 @@ List<Product> sportswear = [
       colorshown_1: 'Dark Grey Heather/Black',
       styleColor1: 'FN4164-063',
       type: 'women_hoodie',
+      type1: 'sportwear',
       describtion:
           "Can you believe it's already been 10 years of Tech Fleece? We’re celebrating the occasion by bringing back the tailored lines and sleek details from the original design. Our premium, lightweight fleece–smooth both inside and out–gives you plenty of warmth without adding bulk.Complete your look with matching joggers or your favorite pair of leggings. The future of fleece starts here."),
   Product(
@@ -242,8 +247,43 @@ List<Product> sportswear = [
       colorshown_1: 'Diffused Blue',
       styleColor1: 'FQ6226-491',
       type: 'women_hoodie',
+      type1: 'sportwear',
       describtion:
           "With eye-catching stripes and a voluminous fit, this Phoenix Fleece sweatshirt gives you a look that's anything but basic. Midweight brushed fleece feels extra soft on the inside and smooth on the outside, helping you stay comfortable while keeping its structured shape."),
+  Product(
+      name: "Nike Everyday Plus Cushioned",
+      imgaeURl1:
+          'lib/assets/pic/category/Product/SportWears/Nike Everyday Plus Cushioned.png',
+      price: 18.00,
+      colorshown_1: 'Black/White',
+      styleColor1: 'DJ5857-010',
+      type: 'sock',
+      type1: 'sportwear',
+      describtion:
+          "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
+  Product(
+      name: "Nike Everyday Wool",
+      imgaeURl1:
+          'lib/assets/pic/category/Product/SportWears/Nike Everyday Wool.png',
+      price: 16.97,
+      colorshown_1: 'Multi-Color',
+      styleColor1: 'DQ6397-904',
+      type: 'sock',
+      discount: '22%',
+      type1: 'sportwear',
+      disPrice: 22.00,
+      describtion:
+          "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
+  Product(
+      name: "Nike Peak",
+      imgaeURl1: 'lib/assets/pic/category/Product/SportWears/Nike Peak.png',
+      price: 30.00,
+      colorshown_1: 'Noise Aqua/White',
+      styleColor1: 'FB6529-440',
+      type: 'Hat',
+      type1: 'sportwear',
+      describtion:
+          "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
 ];
 List<Product> shoes_football = [
   Product(

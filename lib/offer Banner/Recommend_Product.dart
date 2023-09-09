@@ -54,9 +54,11 @@ class _Recommend_productState extends State<Recommend_product> {
         ],
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             SingleChildScrollView(
+              scrollDirection: Axis.vertical,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

@@ -20,7 +20,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
 
   @override
   Widget build(BuildContext context) {
-    bool isShoesProduct = widget.product.typecolor == 'Shoes';
+    bool isShoesProduct = widget.product.type1 == 'Shoes';
     bool isbagProduct = widget.product.type == 'bag';
     bool isShoesFootball = widget.product.type == 'football shoes';
     bool isHatProduct = widget.product.type == 'Hat';
