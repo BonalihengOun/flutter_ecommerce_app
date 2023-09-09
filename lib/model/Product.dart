@@ -167,13 +167,13 @@ List<Product> sportswear = [
   Product(
       name: "Nike Sportswear Heritage86 Futura",
       imgaeURl1:
-          'lib/assets/pic/category/Product/Sportwear/Nike Sportswear Heritage86 Futura Washed_GreenLight.png',
+          'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_GreenLight.png',
       imgURL2:
-          'lib/assets/pic/category/product/Sportwear/Nike Sportswear Heritage86 Futura Washed_Pink.png',
+          'lib/assets/pic/category/product/SportWears/Nike Sportswear Heritage86 Futura Washed_Pink.png',
       imgURL3:
-          'lib/assets/pic/category/product/Sportwear/Nike Sportswear Heritage86 Futura Washed_Purple.png',
+          'lib/assets/pic/category/product/SportWears/Nike Sportswear Heritage86 Futura Washed_Purple.png',
       imgURL4:
-          'lib/assets/pic/category/product/Sportwear/Nike Sportswear Heritage86 Futura Washed_Black.png',
+          'lib/assets/pic/category/product/SportWears/Nike Sportswear Heritage86 Futura Washed_Black.png',
       price: 24,
       disPrice: 21.60,
       styleColor1: '913011-363',
@@ -234,6 +234,16 @@ List<Product> sportswear = [
       type: 'women_hoodie',
       describtion:
           "Can you believe it's already been 10 years of Tech Fleece? We’re celebrating the occasion by bringing back the tailored lines and sleek details from the original design. Our premium, lightweight fleece–smooth both inside and out–gives you plenty of warmth without adding bulk.Complete your look with matching joggers or your favorite pair of leggings. The future of fleece starts here."),
+  Product(
+      name: "Nike Sportswear Phoenix Fleece",
+      imgaeURl1:
+          'lib/assets/pic/category/Product/SportWears/Nike Sportswear Phoenix Fleece.png',
+      price: 80.00,
+      colorshown_1: 'Diffused Blue',
+      styleColor1: 'FQ6226-491',
+      type: 'women_hoodie',
+      describtion:
+          "With eye-catching stripes and a voluminous fit, this Phoenix Fleece sweatshirt gives you a look that's anything but basic. Midweight brushed fleece feels extra soft on the inside and smooth on the outside, helping you stay comfortable while keeping its structured shape."),
 ];
 List<Product> shoes_football = [
   Product(
