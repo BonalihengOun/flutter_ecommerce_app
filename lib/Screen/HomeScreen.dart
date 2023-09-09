@@ -78,20 +78,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      height: 220,
-                      child: PageView(
-                        controller: Controller,
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          Promotion(
-                            image: 'lib/assets/pic/banner/bannerDiscount.png',
+                    Column(
+                      children: [
+                        Container(
+                          height: 210,
+                          child: ListView(
+                            padding: EdgeInsets.all(7),
+                            controller: Controller,
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Promotion(),
+                              Recommend(),
+                            ],
                           ),
-                          Recommend(
-                              image:
-                                  'lib/assets/pic/banner/bannerRecommend.png'),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
