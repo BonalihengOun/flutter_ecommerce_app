@@ -35,60 +35,38 @@ class _Offer_screenState extends State<Offer_screen> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Light),
+                  border: Border.all(width: 1, color: Dark.withOpacity(0.1)),
                 ),
               ),
               SizedBox(
                 height: 20,
               ),
-              Center(
-                child: Container(
-                  width: 340,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: Dark,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      'Use “MEGSL” Cupon For \nGet 90%off',
-                      style: TextStyle(
-                          fontFamily: "NiraBold",
-                          color: Light,
-                          letterSpacing: 0.5),
-                    ),
-                  ),
-                ),
-              ),
               Column(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 35),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Promotion(
-                      text: '\tSuper Flash Sale\n 50% off',
-                      image: 'lib/assets/pic/Promotion 1.png',
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => SuperFlashSale(),
-                        ));
-                      },
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 35),
-                    child: Recommend(
-                      text: '90% off Super Mega \nSale',
-                      image: 'lib/assets/pic/Promotion 2.png',
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => Recommend_product(),
-                        ));
-                      },
-                    ),
+                  Stack(
+                    children: [
+                      Image.asset(''),
+                      Center(
+                        child: Container(
+                          width: 340,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: Dark,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              'Use “MEGSL” Cupon For \nGet 90%off',
+                              style: TextStyle(
+                                  fontFamily: "NiraBold",
+                                  color: Light,
+                                  letterSpacing: 0.5),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

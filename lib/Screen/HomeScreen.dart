@@ -84,12 +84,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         scrollDirection: Axis.horizontal,
                         children: [
                           Promotion(
-                            text: '\tSuper Flash Sale\n 50% off',
+                            text: 'Discount Upto 50%',
                             image: 'lib/assets/pic/Promotion 1.png',
                             onTap: () {},
                           ),
                           Recommend(
-                            text: 'Recommended \nProduct',
+                            text: 'Recommended \nProduct for you',
                             image: 'lib/assets/pic/Promotion 2.png',
                             onTap: () {},
                           ),
