@@ -34,7 +34,7 @@ class _Product_1State extends State<Product_1> {
             child: Container(
               width: 150,
               decoration: BoxDecoration(
-                color: Colors.amber,
+                color: Color(0xffF6F6F6),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(width: 1, color: Grey.withOpacity(0.1)),
               ),

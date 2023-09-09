@@ -9,7 +9,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import you
 class ProductDetail1 extends StatefulWidget {
   final Product product;
 
-  ProductDetail1({required this.product});
+  const ProductDetail1({required this.product});
 
   @override
   State<ProductDetail1> createState() => _ProductDetail1State();

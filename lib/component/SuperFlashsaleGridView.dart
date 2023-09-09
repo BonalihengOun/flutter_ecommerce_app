@@ -22,7 +22,7 @@ class _Product_3State extends State<Product_3> {
         child: GridView.builder(
           padding: EdgeInsets.all(9),
           scrollDirection: Axis.vertical,
-          itemCount: Shoes_football.length,
+          itemCount: shoes_football.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 10.0,
@@ -67,7 +67,7 @@ class _Product_3State extends State<Product_3> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                Shoes_football[index].name,
+                                shoes_football[index].name,
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontFamily: 'NiraSemi',
@@ -92,7 +92,7 @@ class _Product_3State extends State<Product_3> {
                                 height: 10,
                               ),
                               Text(
-                                '\$' + Shoes_football[index].price.toString(),
+                                '\$' + shoes_football[index].price.toString(),
                                 style: TextStyle(
                                     fontSize: 15,
                                     fontFamily: 'NiraBold',
@@ -101,7 +101,7 @@ class _Product_3State extends State<Product_3> {
                               Row(
                                 children: [
                                   Text(
-                                    Shoes_football[index].disPrice.toString(),
+                                    shoes_football[index].disPrice.toString(),
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontFamily: 'NiraSemi',
@@ -110,7 +110,7 @@ class _Product_3State extends State<Product_3> {
                                   ),
                                   SizedBox(width: 8),
                                   Text(
-                                    Shoes_football[index].discount.toString() +
+                                    shoes_football[index].discount.toString() +
                                         'Off',
                                     style: TextStyle(
                                       fontSize: 12,

@@ -2,8 +2,8 @@ class Product {
   final String imgaeURl1;
   final String name;
   final double price;
-  final double disPrice;
-  final String discount;
+  final double? disPrice;
+  final String? discount;
   final String? type;
   final String? typecolor;
   final String describtion;
@@ -18,7 +18,7 @@ class Product {
   final String? styleColor2;
   final String? styleColor3;
   final String styleColor1;
-  final String color1;
+  final String? color1;
   final String? color2;
   final String? color3;
   final String? color4;
@@ -27,9 +27,9 @@ class Product {
       {required this.imgaeURl1,
       required this.name,
       required this.price,
-      required this.disPrice,
+      this.disPrice,
       required this.describtion,
-      required this.color1,
+      this.color1,
       this.color2,
       this.color3,
       this.color4,
@@ -46,7 +46,7 @@ class Product {
       this.typecolor,
       required this.styleColor1,
       required this.colorshown_1,
-      required this.discount});
+      this.discount});
 }
 
 List<Product> productMen = [
@@ -163,7 +163,7 @@ List<Product> productMen = [
           "Have you ever walked on Air? Step into the Air VaporMax 2023 to see how it's done. The innovative tech is revealed through the perforated sockliner (pull it out to see more). The stretchy Flyknit upper is made from at least 20% recycled content by weight.",
       discount: '24%'),
 ];
-List<Product> productmen_woman = [
+List<Product> sportswear = [
   Product(
       name: "Nike Sportswear Heritage86 Futura",
       imgaeURl1:
@@ -192,8 +192,29 @@ List<Product> productmen_woman = [
       describtion:
           "Crafted from soft fabric, the Nike Sportswear Heritage86 Futura Washed Hat has a 6-panel design for classic comfort and an adjustable closure for a personalized fit.",
       discount: '10%'),
+  Product(
+    name: "Nike Sportswear Tech Fleece",
+    imgaeURl1:
+        'lib/assets/pic/category/Product/SportWears/Nike Sportswear Tech Fleece.png',
+    price: 100.70,
+    colorshown_1: 'Light Grey/Heather/Black',
+    styleColor1: 'FN7124-013',
+    type: 'Women_hoodie',
+    describtion:
+        "Can you believe it's already been 10 years of Tech Fleece? We're celebrating the occasion with a modern silhouette and a colour palette inspired by natural minerals. Since 2013, our premium, lightweight fleece is smooth both inside and out—giving you plenty of warmth without unnecessary bulk. ",
+  ),
+  Product(
+    name: "Nike SB",
+    imgaeURl1: 'lib/assets/pic/category/Product/SportWears/Nike SB.png',
+    price: 89.65,
+    colorshown_1: 'University Gold',
+    styleColor1: 'DV8840-739',
+    type: 'men_hoodie',
+    describtion:
+        "Made from soft French terry fleece for warmth and comfort, this Nike SB hoodie features our signature box logo front and centre. The skate-ready fit is roomy through the chest, shoulders and body for easy movement and layering. Skate hard, lounge easy. ",
+  ),
 ];
-List<Product> Shoes_football = [
+List<Product> shoes_football = [
   Product(
       name: "Nike Mercurial Superfly 9 Lite",
       imgaeURl1:
