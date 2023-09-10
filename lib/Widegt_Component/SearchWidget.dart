@@ -11,8 +11,8 @@ class SearchInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.height / 3.25,
-      margin: EdgeInsets.only(left: 5),
+      width: MediaQuery.of(context).size.height / 3.35,
+      margin: EdgeInsets.only(left: 0),
       height: 45,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/CountDownDiscount.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
@@ -15,42 +17,53 @@ class _RecommendState extends State<Recommend> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 20),
       child: Container(
         child: Stack(
           children: [
             Container(
-              height: 200,
-              width: 360,
+              height: 180,
+              width: 330,
               decoration: BoxDecoration(
                 color: Color(0xffBB801C),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(18),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
+              padding: const EdgeInsets.only(left: 20, top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Recommmend',
+                    'Recommend',
                     style: TextStyle(
                         fontFamily: 'NiraBold', fontSize: 28, color: Light),
                   ),
                   Text(
-                    ' Product for you',
+                    '\tWe recommend the best for you',
                     style: TextStyle(
                       fontFamily: 'NiraRegular',
-                      fontSize: 14,
-                      color: Light.withOpacity(0.8),
+                      fontSize: 10,
+                      color: Light.withOpacity(0.9),
                     ),
                   ),
                 ],
               ),
             ),
-            Container(
-              child: Image.asset(
-                'lib/assets/pic/banner/Yellow Shoe.png',
+            Expanded(
+              child: Container(
+                width: 260.0,
+                height: 220,
+                margin: EdgeInsets.only(
+                  left: 110,
+                ),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(
+                        'lib/assets/pic/banner/Yellow Shoe.png',
+                      ),
+                      fit: BoxFit.fitWidth),
+                ),
               ),
             ),
           ],

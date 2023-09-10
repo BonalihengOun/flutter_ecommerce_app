@@ -72,6 +72,71 @@ class _Offer_screenState extends State<Offer_screen> {
                           ),
                         ),
                       ),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, top: 130),
+                          child: Column(
+                            children: [
+                              Promotion(),
+                              Recommend(),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 240, left: 60),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SuperFlashSale(),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+
+                            primary: Colors
+                                .black, // Change the button's background color
+                            onPrimary: Colors.white, // Change the text color
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  14.0), // Set the border radius
+                            ),
+                            minimumSize:
+                                Size(96, 35), // Set the width and height
+                          ),
+                          child: Text("Shop Now"),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 450, left: 60),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Recommend_product(),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+
+                            primary: Colors
+                                .black, // Change the button's background color
+                            onPrimary: Colors.white, // Change the text color
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  14.0), // Set the border radius
+                            ),
+                            minimumSize:
+                                Size(96, 35), // Set the width and height
+                          ),
+                          child: Text("Shop Now"),
+                        ),
+                      ),
                     ],
                   ),
                 ],

@@ -21,107 +21,110 @@ class _Product_2State extends State<Product_2> {
         scrollDirection: Axis.horizontal,
         itemCount: nike_air_jordan.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      ProductDetail1(product: nike_air_jordan[index]),
+          return Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        ProductDetail1(product: nike_air_jordan[index]),
+                  ),
+                );
+              },
+              child: Container(
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color(0xffF6F6F6),
+                  border: Border.all(width: 1, color: Grey.withOpacity(0.2)),
                 ),
-              );
-            },
-            child: Container(
-              width: 150,
-              decoration: BoxDecoration(
-                color: Grey.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(width: 1, color: Grey.withOpacity(0.2)),
-              ),
-              padding: EdgeInsets.all(12),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Container(
-                          height: 130,
-                          width: 120,
-                          child: Image.asset(
-                            nike_air_jordan[index].imgaeURl1,
+                padding: EdgeInsets.all(12),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Container(
+                            height: 130,
+                            width: 120,
+                            child: Image.asset(
+                              nike_air_jordan[index].imgaeURl1,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            nike_air_jordan[index].name,
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontFamily: 'NiraSemi',
-                                color: Dark),
-                          ),
-                          RatingBar.builder(
-                            initialRating: 3.5,
-                            minRating: 1,
-                            itemSize: 13,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemBuilder: (context, _) => Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                            ),
-                            onRatingUpdate: (rating) {
-                              print(rating);
-                            },
-                          ),
-                          SizedBox(
-                            height: 4,
-                          ),
-                          Text(
-                            '\$' + nike_air_jordan[index].price.toString(),
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontFamily: 'NiraBold',
-                                color: Dark),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                nike_air_jordan[index].disPrice.toString(),
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: 'NiraSemi',
-                                    color: Grey,
-                                    decoration: TextDecoration.lineThrough),
-                              ),
-                              SizedBox(width: 8),
-                              Text(
-                                nike_air_jordan[index].discount.toString() +
-                                    'Off',
-                                style: TextStyle(
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              nike_air_jordan[index].name,
+                              style: TextStyle(
                                   fontSize: 12,
                                   fontFamily: 'NiraSemi',
-                                  color: RedPrimary,
-                                ),
+                                  color: Dark),
+                            ),
+                            RatingBar.builder(
+                              initialRating: 3.5,
+                              minRating: 1,
+                              itemSize: 13,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,
+                                color: Colors.amber,
                               ),
-                            ],
-                          ),
-                        ],
+                              onRatingUpdate: (rating) {
+                                print(rating);
+                              },
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Text(
+                              '\$' + nike_air_jordan[index].price.toString(),
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: 'NiraBold',
+                                  color: Dark),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  nike_air_jordan[index].disPrice.toString(),
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: 'NiraSemi',
+                                      color: Grey,
+                                      decoration: TextDecoration.lineThrough),
+                                ),
+                                SizedBox(width: 8),
+                                Text(
+                                  nike_air_jordan[index].discount.toString() +
+                                      'Off',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'NiraSemi',
+                                    color: RedPrimary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

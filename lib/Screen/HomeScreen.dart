@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Light.withOpacity(0.2),
         body: Stack(children: [
           SingleChildScrollView(
             child: Column(
@@ -36,39 +37,37 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 12),
+                  padding: const EdgeInsets.only(left: 35, top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SearchInput(
                           textController: _searchInputController,
                           hintText: 'Search Product'),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            splashRadius: 20.5,
-                            icon: Icon(
-                              Icons.favorite_border,
-                              color: Grey,
-                              size: 24,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 5),
-                            child: IconButton(
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            IconButton(
                               onPressed: () {},
                               splashRadius: 20.5,
-                              autofocus: EditableText.debugDeterministicCursor,
+                              icon: Icon(
+                                Icons.favorite_border,
+                                color: Grey,
+                                size: 24,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              splashRadius: 20.5,
                               icon: Image.asset(
                                 'lib/assets/pic/NotificationIcon.png',
                                 width: 24,
                                 height: 24,
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       )
                     ],
                   ),
@@ -81,15 +80,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     Column(
                       children: [
                         Container(
-                          height: 210,
-                          child: ListView(
-                            padding: EdgeInsets.all(7),
-                            controller: Controller,
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              Promotion(),
-                              Recommend(),
-                            ],
+                          height: 215,
+                          margin: EdgeInsets.only(left: 10),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: PageView(
+                              controller: Controller,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Promotion(),
+                                Recommend(),
+                              ],
+                            ),
                           ),
                         ),
                       ],

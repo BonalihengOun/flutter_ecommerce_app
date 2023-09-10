@@ -18,11 +18,11 @@ class _Recommend_ProductState extends State<Recommend_Product> {
     return Center(
       child: SizedBox(
         height: 650,
-        width: 365,
+        width: 355,
         child: GridView.builder(
           padding: EdgeInsets.all(9),
           scrollDirection: Axis.vertical,
-          itemCount: shoes_football.length,
+          itemCount: Product_all.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 10.0,
@@ -35,7 +35,7 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        ProductDetail1(product: shoes_football[index]),
+                        ProductDetail1(product: Product_all[index]),
                   ),
                 );
               },
@@ -54,9 +54,9 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                       Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
-                          height: 130,
+                          height: 120,
                           width: 120,
-                          child: Image.asset(shoes_football[index].imgaeURl1),
+                          child: Image.asset(Product_all[index].imgaeURl1),
                         ),
                       ),
                       Padding(
@@ -65,7 +65,7 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              shoes_football[index].name,
+                              Product_all[index].name,
                               style: TextStyle(
                                   fontSize: 12,
                                   fontFamily: 'NiraSemi',
@@ -90,7 +90,7 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                               height: 5,
                             ),
                             Text(
-                              '\$' + shoes_football[index].price.toString(),
+                              '\$' + Product_all[index].price.toString(),
                               style: TextStyle(
                                   fontSize: 15,
                                   fontFamily: 'NiraBold',
@@ -99,7 +99,7 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                             Row(
                               children: [
                                 Text(
-                                  shoes_football[index].disPrice.toString(),
+                                  Product_all[index].disPrice.toString(),
                                   style: TextStyle(
                                       fontSize: 12,
                                       fontFamily: 'NiraSemi',
@@ -108,7 +108,7 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                                 ),
                                 SizedBox(width: 8),
                                 Text(
-                                  shoes_football[index].discount.toString() +
+                                  Product_all[index].discount.toString() +
                                       'Off',
                                   style: TextStyle(
                                     fontSize: 12,
