@@ -17,17 +17,17 @@ class _Recommend_ProductState extends State<Recommend_Product> {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        height: 650,
+        height: 660,
         width: 355,
         child: GridView.builder(
-          padding: EdgeInsets.all(9),
+          padding: EdgeInsets.all(12),
           scrollDirection: Axis.vertical,
           itemCount: Product_all.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 10.0,
               mainAxisSpacing: 10.0,
-              childAspectRatio: 0.63),
+              childAspectRatio: 0.60),
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
