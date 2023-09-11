@@ -15,60 +15,62 @@ class Recommend_Product extends StatefulWidget {
 class _Recommend_ProductState extends State<Recommend_Product> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        height: 660,
-        width: 355,
-        child: GridView.builder(
-          padding: EdgeInsets.all(12),
-          scrollDirection: Axis.vertical,
-          itemCount: Product_all.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10.0,
-              mainAxisSpacing: 10.0,
-              childAspectRatio: 0.60),
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        ProductDetail1(product: Product_all[index]),
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Center(
+        child: SizedBox(
+          height: 650,
+          width: 365,
+          child: GridView.builder(
+            padding: EdgeInsets.all(8),
+            scrollDirection: Axis.vertical,
+            itemCount: Product_all.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 10.0,
+                childAspectRatio: 0.60),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ProductDetail1(product: Product_all[index]),
+                    ),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xffF5F5F5),
+                    borderRadius: BorderRadius.circular(18),
+                    border: Border.all(width: 1, color: Grey.withOpacity(0.3)),
                   ),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: PeopleSkin,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    width: 1,
-                    color: Grey.withOpacity(0.1),
-                  ),
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Container(
-                          height: 120,
-                          width: 120,
-                          child: Image.asset(Product_all[index].imgaeURl1),
+                  padding:
+                      EdgeInsets.only(bottom: 15, left: 15, right: 10, top: 5),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 250,
+                          height: 150,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(Product_all[index].imgaeURl1),
+                                fit: BoxFit.fitHeight),
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 12),
-                        child: Column(
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               Product_all[index].name,
                               style: TextStyle(
-                                  fontSize: 12,
                                   fontFamily: 'NiraSemi',
+                                  fontSize: 13,
                                   color: Dark),
                             ),
                             RatingBar.builder(
@@ -120,13 +122,13 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );

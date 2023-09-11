@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/component/SuperFlashsaleGridView.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
+import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/Promotion_Card.dart';
 
 class SuperFlashSale extends StatefulWidget {
   const SuperFlashSale({super.key});
@@ -51,53 +52,36 @@ class _SuperFlashSaleState extends State<SuperFlashSale> {
         ],
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30, right: 25),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      child: Stack(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(
-                              'lib/assets/pic/Promotion 1.png',
-                              height: 220,
-                              width: 340,
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 30, top: 32, right: 110, bottom: 102),
-                                child: Text(
-                                  'Super Flash Sale\n50%off',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontFamily: 'NiraBold',
-                                      letterSpacing: 0.5,
-                                      color: Light),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
                     ),
                   ),
-                  Product_3(),
-                ],
-              ),
+                  child: Stack(
+                    children: [
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Promotion(),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 30),
+                            child: Product_3(),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),

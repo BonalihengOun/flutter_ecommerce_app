@@ -23,7 +23,7 @@ class _Promotion_1State extends State<Promotion> {
               height: 170,
               width: 330,
               decoration: BoxDecoration(
-                color: Grey.withOpacity(0.4),
+                color: Color.fromARGB(255, 208, 208, 208),
                 borderRadius: BorderRadius.circular(18),
               ),
             ),

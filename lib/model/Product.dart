@@ -165,7 +165,7 @@ List<Product> productMen = [
 ];
 List<Product> sportswear = [
   Product(
-      name: "Nike Sportswear \nHeritage86 Futura",
+      name: "Nike Sportswear Heritage86 Futura",
       imgaeURl1:
           'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_GreenLight.png',
       imgURL2:
@@ -217,7 +217,7 @@ List<Product> sportswear = [
         "Made from soft French terry fleece for warmth and comfort, this Nike SB hoodie features our signature box logo front and centre. The skate-ready fit is roomy through the chest, shoulders and body for easy movement and layering. Skate hard, lounge easy. ",
   ),
   Product(
-    name: "Nike Sportswear Tech \nFleece Windrunner",
+    name: "Nike Sportswear Tech Fleece Windrunner",
     imgaeURl1:
         'lib/assets/pic/category/Product/SportWears/sportswear_tech_fleece_windrunner_mens_full_zip_hoodie_rznlBf.jpeg',
     price: 145.00,
@@ -229,7 +229,7 @@ List<Product> sportswear = [
         "Blending 2 of our most iconic looks, this full-zip hoodie draws design inspiration from our timeless Windrunner jacket as well as our Tech Fleece jacket.",
   ),
   Product(
-      name: "Nike Sportswear Tech \nFleece OG",
+      name: "Nike Sportswear Tech Fleece OG",
       imgaeURl1:
           'lib/assets/pic/category/Product/SportWears/sportswear-tech-fleece-og-womens-loose-cape-S4zv0w.jpeg',
       price: 150.00,
@@ -251,7 +251,7 @@ List<Product> sportswear = [
       describtion:
           "With eye-catching stripes and a voluminous fit, this Phoenix Fleece sweatshirt gives you a look that's anything but basic. Midweight brushed fleece feels extra soft on the inside and smooth on the outside, helping you stay comfortable while keeping its structured shape."),
   Product(
-      name: "Nike Everyday Plus \nCushioned",
+      name: "Nike Everyday Plus Cushioned",
       imgaeURl1:
           'lib/assets/pic/category/Product/SportWears/Nike Everyday Plus Cushioned.png',
       price: 18.00,
@@ -285,7 +285,7 @@ List<Product> sportswear = [
       describtion:
           "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
   Product(
-      name: "Nike Sportswear Club \nPrimaLoft®",
+      name: "Nike Sportswear Club PrimaLoft®",
       imgaeURl1:
           'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png',
       price: 150.00,

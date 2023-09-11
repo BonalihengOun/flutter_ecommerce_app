@@ -107,7 +107,7 @@ class _Offer_screenState extends State<Offer_screen> {
                             minimumSize:
                                 Size(96, 35), // Set the width and height
                           ),
-                          child: Text("Shop Now"),
+                          child: Text("Buy now"),
                         ),
                       ),
                       Padding(
@@ -134,7 +134,7 @@ class _Offer_screenState extends State<Offer_screen> {
                             minimumSize:
                                 Size(96, 35), // Set the width and height
                           ),
-                          child: Text("Shop Now"),
+                          child: Text("Go now"),
                         ),
                       ),
                     ],

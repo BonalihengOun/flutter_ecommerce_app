@@ -36,9 +36,9 @@ class _Product_2State extends State<Product_2> {
               child: Container(
                 width: 150,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
                   color: Color(0xffF6F6F6),
-                  border: Border.all(width: 1, color: Grey.withOpacity(0.2)),
+                  borderRadius: BorderRadius.circular(18),
+                  border: Border.all(width: 1, color: Grey.withOpacity(0.8)),
                 ),
                 padding: EdgeInsets.all(12),
                 child: SingleChildScrollView(

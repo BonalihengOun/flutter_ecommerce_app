@@ -16,13 +16,15 @@ class _Product_1State extends State<Product_1> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 205,
+      height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: productMen.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 15), // Add right padding
+            padding: const EdgeInsets.only(
+              left: 15,
+            ), // Add right padding
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -34,32 +36,80 @@ class _Product_1State extends State<Product_1> {
                 );
               },
               child: Container(
-                width: 380,
+                width: 390,
                 decoration: BoxDecoration(
                   color: Color(0xffF6F6F6),
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 1, color: Grey.withOpacity(0.1)),
+                  borderRadius: BorderRadius.circular(18),
+                  border: Border.all(width: 1, color: Grey.withOpacity(0.8)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      width: 200,
-                      height: 420,
+                      width: 170,
+                      margin: EdgeInsets.only(left: 15),
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage(productMen[index].imgaeURl1),
                             fit: BoxFit.fitWidth),
                       ),
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          productMen[index].name,
-                          style:
-                              TextStyle(fontFamily: 'NiraBold', fontSize: 20),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20, top: 30),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              productMen[index].name,
+                              style: TextStyle(
+                                  fontFamily: 'NiraBold', fontSize: 18),
+                            ),
+                            RatingBar.builder(
+                              initialRating: 3.5,
+                              minRating: 1,
+                              itemSize: 15,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              onRatingUpdate: (rating) {
+                                print(rating);
+                              },
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              '\$' + productMen[index].price.toString(),
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontFamily: 'NiraBold',
+                                  color: Dark),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              productMen[index].disPrice.toString(),
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'NiraSemi',
+                                  color: Grey,
+                                  decoration: TextDecoration.lineThrough),
+                            ),
+                            Text(
+                              productMen[index].discount.toString() + 'Off',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontFamily: 'NiraSemi',
+                                color: RedPrimary,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ],
                 ),

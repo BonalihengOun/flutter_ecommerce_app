@@ -58,29 +58,33 @@ class _Recommend_productState extends State<Recommend_product> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      child: Stack(
-                        children: [
-                          Recommend(),
-                        ],
-                      ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
                     ),
                   ),
-                  Recommend_Product(),
-                ],
-              ),
+                  child: Stack(
+                    children: [
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Recommend(),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 30),
+                            child: Recommend_Product(),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
