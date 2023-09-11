@@ -36,7 +36,7 @@ class _splashscreenState extends State<splashscreen>
           child: Container(
             width: 72,
             height: 72,
-            child: Image.asset('lib/assets/pic/Icon App/single icon Blue.png'),
+            child: Image.asset('lib/assets/pic/Icon App/single icon white.png'),
           ),
         ),
       ),

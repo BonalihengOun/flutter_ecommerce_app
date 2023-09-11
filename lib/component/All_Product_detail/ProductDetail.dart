@@ -210,27 +210,24 @@ class _ProductDetail1State extends State<ProductDetail1> {
                 SizedBox(
                   height: 12,
                 ),
-                if (isShoesProduct)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Text(
-                      'Select Color',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'NiraBold',
-                        color: Dark,
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Text(
+                    'Select Color',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontFamily: 'NiraBold',
+                      color: Dark,
                     ),
                   ),
-                if (isShoesProduct)
-                  SizedBox(
-                    height: 12,
-                  ),
-                if (isShoesProduct)
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: SelectColor(),
-                  ),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: SelectColor(),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
                   child: Text(
@@ -253,7 +250,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                             color: Dark),
                       ),
                       Text(
-                        'Laser \nBlue/Anthracite\n/Watermelon\n/White',
+                        widget.product.colorshown_1,
                         style: TextStyle(
                             fontSize: 14,
                             fontFamily: 'NiraRegular',
@@ -262,53 +259,51 @@ class _ProductDetail1State extends State<ProductDetail1> {
                     ],
                   ),
                 ),
-                if (isShoesProduct)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 25, vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Style',
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'NiraRegular',
-                              color: Dark),
-                        ),
-                        Text(
-                          'CD0113-400',
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'NiraRegular',
-                              color: Dark),
-                        ),
-                      ],
-                    ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Style',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: 'NiraRegular',
+                            color: Dark),
+                      ),
+                      Text(
+                        widget.product.styleColor1,
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontFamily: 'NiraRegular',
+                            color: Dark),
+                      ),
+                    ],
                   ),
-                if (isShoesProduct)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Positioned(
-                          top: 0,
-                          left: 0,
-                          right: 1.2,
-                          bottom: 0,
-                          child: Text(
-                            widget.product.describtion,
-                            style: TextStyle(
-                                fontFamily: 'NiraRegular',
-                                color: Grey,
-                                letterSpacing: 0.5),
-                          ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        right: 1.2,
+                        bottom: 0,
+                        child: Text(
+                          widget.product.describtion,
+                          style: TextStyle(
+                              fontFamily: 'NiraRegular',
+                              color: Grey,
+                              letterSpacing: 0.5),
                         ),
-                      ],
-                    ),
-                  )
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ],
