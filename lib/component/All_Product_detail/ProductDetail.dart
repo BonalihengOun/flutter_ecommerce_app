@@ -20,10 +20,11 @@ class _ProductDetail1State extends State<ProductDetail1> {
 
   @override
   Widget build(BuildContext context) {
-    bool isProductMen = widget.product.type1 == 'Shoes';
-    bool isHatproduct = widget.product.type == 'Hat';
+    bool isProductMen = widget.product.type1 == 'productMen';
+    bool issportwear = widget.product.type1 == 'sportwear';
     bool isShoesFootball = widget.product.type == 'football shoes';
-    bool isSportswearProduct = widget.product.type1 == 'sportwear';
+    bool isHatProduct = widget.product.type == 'Hat';
+    bool isShoesProduct = widget.product.type == 'Shoes';
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -73,7 +74,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            if (isHatproduct)
+            if (isShoesProduct || isHatProduct)
               Container(
                 height: 240,
                 child: PageView(
