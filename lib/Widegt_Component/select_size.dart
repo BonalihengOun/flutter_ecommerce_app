@@ -25,7 +25,7 @@ class _selectSizedState extends State<selectSized> {
     "45",
     "46"
   ];
-  final List<String> availableSizesForbag = ["S", "M", "L"];
+  final List<String> availableSizesSportwears = ["S", "M", "L", "XL"];
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,12 @@ class _selectSizedState extends State<selectSized> {
       margin: EdgeInsets.only(left: 10),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: widget.type == 'bag'
-            ? availableSizesForbag.length
+        itemCount: widget.type == 'sportwear'
+            ? availableSizesSportwears.length
             : availableSizesForShoes.length,
         itemBuilder: (context, index) {
-          final size = widget.type == 'bag'
-              ? availableSizesForbag[index]
+          final size = widget.type == 'sportwear'
+              ? availableSizesSportwears[index]
               : availableSizesForShoes[index];
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5.0),

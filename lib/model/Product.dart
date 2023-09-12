@@ -55,11 +55,11 @@ List<Product> productMen = [
       imgaeURl1:
           'lib/assets/pic/category/Product/Nike_infinity_colors/Nike_infinityRN4_Midnight.png',
       imgURL2:
-          'lib/assets/pic/category/product/Nike_infinity_colors/Nike_infinityRN4_white.png',
+          'lib/assets/pic/category/Product/Nike_infinity_colors/Nike_infinityRN4_white.png',
       imgURL3:
-          'lib/assets/pic/category/product/Nike_infinity_colors/Nike_infinityRN4_whiteRed.png',
+          'lib/assets/pic/category/Product/Nike_infinity_colors/Nike_infinityRN4_whiteRed.png',
       imgURL4:
-          'lib/assets/pic/category/product/Nike_infinity_colors/Nike_infinityRN4_Blackwhite.png',
+          'lib/assets/pic/category/Product/Nike_infinity_colors/Nike_infinityRN4_Blackwhite.png',
       price: 175.00,
       disPrice: 133,
       styleColor2: 'DR2665-101',
@@ -83,11 +83,11 @@ List<Product> productMen = [
       imgaeURl1:
           'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_Blueaccent.png',
       imgURL2:
-          'lib/assets/pic/category/product/Nike_Pegasus_colors/Nike Pegasus_BlackRed.png',
+          'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_BlackRed.png',
       imgURL3:
-          'lib/assets/pic/category/product/Nike_Pegasus_colors/Nike Pegasus_white.png',
+          'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_white.png',
       imgURL4:
-          'lib/assets/pic/category/product/Nike_Pegasus_colors/Nike Pegasus_whiteGreen.png',
+          'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_whiteGreen.png',
       price: 175.00,
       disPrice: 133,
       styleColor1: 'FB7180-001',
@@ -111,11 +111,11 @@ List<Product> productMen = [
       imgaeURl1:
           'lib/assets/pic/category/Product/Nike_runner_colors/Nike runner_whitebrown.png',
       imgURL2:
-          'lib/assets/pic/category/product/Nike_runner_colors/Nike runner_Blue.png',
+          'lib/assets/pic/category/Product/Nike_runner_colors/Nike runner_Blue.png',
       imgURL3:
-          'lib/assets/pic/category/product/Nike_runner_colors/Nike runner_pink.png',
+          'lib/assets/pic/category/Product/Nike_runner_colors/Nike runner_pink.png',
       imgURL4:
-          'lib/assets/pic/category/product/Nike_runner_colors/Nike runner_white.png',
+          'lib/assets/pic/category/Product/Nike_runner_colors/Nike runner_white.png',
       price: 175.00,
       disPrice: 133,
       styleColor1: 'DX5048-500',
@@ -139,11 +139,11 @@ List<Product> productMen = [
       imgaeURl1:
           'lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit_Gold.jpeg',
       imgURL2:
-          'lib/assets/pic/category/product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit_Redfire.png',
+          'lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit_Redfire.png',
       imgURL3:
-          'lib/assets/pic/category/product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit_Sea.png',
+          'lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit_Sea.png',
       imgURL4:
-          'lib/assets/pic/category/product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit.png',
+          'lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit.png',
       price: 175.00,
       disPrice: 133,
       colorshown_1: 'Sand Drift/Bronzine/Sand Drift/Bronzine',
@@ -169,11 +169,11 @@ List<Product> sportswear = [
       imgaeURl1:
           'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_GreenLight.png',
       imgURL2:
-          'lib/assets/pic/category/product/SportWears/Nike Sportswear Heritage86 Futura Washed_Pink.png',
+          'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_Pink.png',
       imgURL3:
-          'lib/assets/pic/category/product/SportWears/Nike Sportswear Heritage86 Futura Washed_Purple.png',
+          'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_Purple.png',
       imgURL4:
-          'lib/assets/pic/category/product/SportWears/Nike Sportswear Heritage86 Futura Washed_Black.png',
+          'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_Black.png',
       price: 24,
       disPrice: 21.60,
       styleColor1: '913011-363',
@@ -188,8 +188,8 @@ List<Product> sportswear = [
       color2: '0xffEDD7D7',
       color3: '0xffBB7FB5',
       color4: '0xff23272B',
-      type: 'Hat',
-      type1: 'sportwear',
+      type: 'sportwear',
+      type1: 'Hat',
       describtion:
           "Crafted from soft fabric, the Nike Sportswear Heritage86 Futura Washed Hat has a 6-panel design for classic comfort and an adjustable closure for a personalized fit.",
       discount: '10%'),
@@ -200,8 +200,8 @@ List<Product> sportswear = [
     price: 100.70,
     colorshown_1: 'Light Grey/Heather/Black',
     styleColor1: 'FN7124-013',
-    type: 'Women_hoodie',
-    type1: 'sportwear',
+    type1: 'Women_hoodie',
+    type: 'sportwear',
     describtion:
         "Can you believe it's already been 10 years of Tech Fleece? We're celebrating the occasion with a modern silhouette and a colour palette inspired by natural minerals. Since 2013, our premium, lightweight fleece is smooth both inside and out—giving you plenty of warmth without unnecessary bulk. ",
   ),
@@ -211,8 +211,8 @@ List<Product> sportswear = [
     price: 89.65,
     colorshown_1: 'University Gold',
     styleColor1: 'DV8840-739',
-    type: 'men_hoodie',
-    type1: 'sportwear',
+    type1: 'men_hoodie',
+    type: 'sportwear',
     describtion:
         "Made from soft French terry fleece for warmth and comfort, this Nike SB hoodie features our signature box logo front and centre. The skate-ready fit is roomy through the chest, shoulders and body for easy movement and layering. Skate hard, lounge easy. ",
   ),
@@ -223,8 +223,8 @@ List<Product> sportswear = [
     price: 145.00,
     colorshown_1: 'Coconut Milk/Black',
     styleColor1: 'FB7921-113',
-    type: 'men_hoodie',
-    type1: 'sportwear',
+    type1: 'men_hoodie',
+    type: 'sportwear',
     describtion:
         "Blending 2 of our most iconic looks, this full-zip hoodie draws design inspiration from our timeless Windrunner jacket as well as our Tech Fleece jacket.",
   ),
@@ -235,8 +235,8 @@ List<Product> sportswear = [
       price: 150.00,
       colorshown_1: 'Dark Grey Heather/Black',
       styleColor1: 'FN4164-063',
-      type: 'women_hoodie',
-      type1: 'sportwear',
+      type1: 'women_hoodie',
+      type: 'sportwear',
       describtion:
           "Can you believe it's already been 10 years of Tech Fleece? We’re celebrating the occasion by bringing back the tailored lines and sleek details from the original design. Our premium, lightweight fleece–smooth both inside and out–gives you plenty of warmth without adding bulk.Complete your look with matching joggers or your favorite pair of leggings. The future of fleece starts here."),
   Product(
@@ -246,8 +246,8 @@ List<Product> sportswear = [
       price: 80.00,
       colorshown_1: 'Diffused Blue',
       styleColor1: 'FQ6226-491',
-      type: 'women_hoodie',
-      type1: 'sportwear',
+      type1: 'women_hoodie',
+      type: 'sportwear',
       describtion:
           "With eye-catching stripes and a voluminous fit, this Phoenix Fleece sweatshirt gives you a look that's anything but basic. Midweight brushed fleece feels extra soft on the inside and smooth on the outside, helping you stay comfortable while keeping its structured shape."),
   Product(
@@ -257,8 +257,8 @@ List<Product> sportswear = [
       price: 18.00,
       colorshown_1: 'Black/White',
       styleColor1: 'DJ5857-010',
-      type: 'sock',
-      type1: 'sportwear',
+      type1: 'sock',
+      type: 'sportwear',
       describtion:
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
@@ -268,9 +268,9 @@ List<Product> sportswear = [
       price: 16.97,
       colorshown_1: 'Multi-Color',
       styleColor1: 'DQ6397-904',
-      type: 'sock',
+      type1: 'sock',
       discount: '22%',
-      type1: 'sportwear',
+      type: 'sportwear',
       disPrice: 22.00,
       describtion:
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
@@ -280,8 +280,8 @@ List<Product> sportswear = [
       price: 30.00,
       colorshown_1: 'Noise Aqua/White',
       styleColor1: 'FB6529-440',
-      type: 'Hat',
-      type1: 'sportwear',
+      type1: 'Hat',
+      type: 'sportwear',
       describtion:
           "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
   Product(
@@ -291,8 +291,8 @@ List<Product> sportswear = [
       price: 150.00,
       colorshown_1: 'Iron Grey/White',
       styleColor1: 'FB7373-068',
-      type: 'Water-Repellent Puffer Vest',
-      type1: 'sportwear',
+      type1: 'Water-Repellent Puffer Vest',
+      type: 'sportwear',
       describtion:
           "Bring the warmth this classic puffer vest design. It's equipped with PrimaLoft® Thermoplume insulation and water-repellent ripstop fabric to help you fight off the chill from those cold, rainy days. Pull it on over your favorite flannel or hoodie and face the cool weather with confidence."),
 ];

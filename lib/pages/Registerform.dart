@@ -21,6 +21,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 111),
@@ -28,7 +29,7 @@ class _RegisterState extends State<Register> {
             children: [
               Center(
                 child: Image.asset(
-                  'lib/assets/pic/Icon App/single iconBlue.png',
+                  'lib/assets/pic/Icon App/single icon White.png',
                   width: 72,
                   height: 72,
                 ),

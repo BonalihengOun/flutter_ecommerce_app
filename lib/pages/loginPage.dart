@@ -24,6 +24,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffFFFFFF),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 112),
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Center(
                 child: Image.asset(
-                  'lib/assets/pic/Icon App/single iconBlue.png',
+                  'lib/assets/pic/Icon App/single icon White.png',
                   width: 72,
                   height: 72,
                 ),
@@ -40,10 +41,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 16,
               ),
               Text(
-                'Welcome to E-commerce app',
+                'N I K E',
                 style: TextStyle(
                   fontFamily: 'NiraBold',
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
               ),
               SizedBox(

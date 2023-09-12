@@ -20,10 +20,11 @@ class _ProductDetail1State extends State<ProductDetail1> {
 
   @override
   Widget build(BuildContext context) {
-    bool isShoesProduct = widget.product.type1 == 'Shoes';
-    bool isbagProduct = widget.product.type == 'bag';
+    bool isProductMen = widget.product.type1 == 'Shoes';
+    bool isHatproduct = widget.product.type == 'Hat';
     bool isShoesFootball = widget.product.type == 'football shoes';
-    bool isHatProduct = widget.product.type == 'Hat';
+    bool isSportswearProduct = widget.product.type1 == 'sportwear';
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -72,7 +73,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            if (isShoesProduct)
+            if (isHatproduct)
               Container(
                 height: 240,
                 child: PageView(
@@ -83,52 +84,78 @@ class _ProductDetail1State extends State<ProductDetail1> {
                       width: double.infinity,
                       height: 240,
                       decoration: BoxDecoration(
+                        color: Color(0xffF5F5F5),
                         image: DecorationImage(
-                            image: AssetImage(widget.product.imgaeURl1),
-                            fit: BoxFit.cover),
+                          image: AssetImage(widget.product.imgaeURl1),
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                     ),
                     Container(
                       width: double.infinity,
                       height: 240,
                       decoration: BoxDecoration(
+                        color: Color(0xffF5F5F5),
                         image: DecorationImage(
-                            image: AssetImage(widget.product.imgaeURl1),
-                            fit: BoxFit.cover),
+                          image: AssetImage(
+                            widget.product.imgURL2 ??
+                                'assets/placeholder_image.png',
+                          ),
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
-                    ), // //
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 240,
+                      decoration: BoxDecoration(
+                        color: Color(0xffF5F5F5),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            widget.product.imgURL3 ??
+                                'assets/placeholder_image.png',
+                          ),
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 240,
+                      decoration: BoxDecoration(
+                        color: Color(0xffF5F5F5),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            widget.product.imgURL4 ??
+                                'assets/placeholder_image.png',
+                          ),
+                          fit: BoxFit.fitHeight,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
-            if (isbagProduct)
-              Container(
-                width: double.infinity,
-                height: 240,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(widget.product.imgaeURl1),
-                      fit: BoxFit.cover),
-                ),
-              ), //
+            SizedBox(
+              height: 10,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (isShoesProduct)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 200, top: 5),
-                    child: SmoothPageIndicator(
-                      controller: Controller_shoes,
-                      count: 2,
-                      effect: WormEffect(
-                        type: WormType.underground,
-                        activeDotColor: BluePrimary.withOpacity(0.8),
-                        dotHeight: 8,
-                        dotWidth: 8,
-                        dotColor: Grey,
-                        spacing: 10,
-                      ),
+                Center(
+                  child: SmoothPageIndicator(
+                    controller: Controller_shoes,
+                    count: 4,
+                    effect: WormEffect(
+                      type: WormType.underground,
+                      activeDotColor: BluePrimary.withOpacity(0.8),
+                      dotHeight: 8,
+                      dotWidth: 8,
+                      dotColor: Grey,
+                      spacing: 10,
                     ),
                   ),
+                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -203,7 +230,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                 SizedBox(
                   height: 12,
                 ),
-                selectSized(type: widget.product.type.toString()),
+                selectSized(type: widget.product.type1.toString()),
                 SizedBox(
                   height: 12,
                 ),
