@@ -59,7 +59,7 @@ class _Recommend_ProductState extends State<Recommend_Product> {
                           height: 150,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage(Product_all[index].imgaeURl1),
+                                image: AssetImage(Product_all[index].imageUrl![0].url),
                                 fit: BoxFit.fitHeight),
                           ),
                         ),

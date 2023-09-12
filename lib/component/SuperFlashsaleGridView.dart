@@ -59,8 +59,8 @@ class _Product_3State extends State<Product_3> {
                           height: 150,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                                image:
-                                    AssetImage(shoes_football[index].imgaeURl1),
+                                image: AssetImage(
+                                    shoes_football[index].imageUrl![0].url),
                                 fit: BoxFit.fitHeight),
                           ),
                         ),

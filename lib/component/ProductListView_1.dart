@@ -50,8 +50,11 @@ class _Product_1State extends State<Product_1> {
                       margin: EdgeInsets.only(left: 15),
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(productMen[index].imgaeURl1),
-                            fit: BoxFit.fitWidth),
+                          image: AssetImage(productMen[index]
+                              .imageUrl![index]
+                              .url), // Access the URL property
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                     ),
                     Expanded(

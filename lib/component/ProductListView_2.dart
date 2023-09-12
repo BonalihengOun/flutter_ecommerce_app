@@ -53,7 +53,7 @@ class _Product_2State extends State<Product_2> {
                             height: 130,
                             width: 120,
                             child: Image.asset(
-                              nike_air_jordan[index].imgaeURl1,
+                              nike_air_jordan[index].imageUrl![0].url,
                             ),
                           ),
                         ),

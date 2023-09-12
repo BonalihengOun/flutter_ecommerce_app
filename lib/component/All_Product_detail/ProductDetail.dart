@@ -74,7 +74,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            if (isShoesProduct || isHatProduct)
+            if (isHatProduct || isShoesProduct)
               Container(
                 height: 240,
                 child: PageView(
@@ -87,7 +87,8 @@ class _ProductDetail1State extends State<ProductDetail1> {
                       decoration: BoxDecoration(
                         color: Color(0xffF5F5F5),
                         image: DecorationImage(
-                          image: AssetImage(widget.product.imgaeURl1),
+                          image: AssetImage(widget.product.imageUrl![0]
+                              .url), // Use the first image URL
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -98,10 +99,8 @@ class _ProductDetail1State extends State<ProductDetail1> {
                       decoration: BoxDecoration(
                         color: Color(0xffF5F5F5),
                         image: DecorationImage(
-                          image: AssetImage(
-                            widget.product.imgURL2 ??
-                                'assets/placeholder_image.png',
-                          ),
+                          image: AssetImage(widget.product.imageUrl![1]
+                              .url), // Use the first image URL
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -112,10 +111,8 @@ class _ProductDetail1State extends State<ProductDetail1> {
                       decoration: BoxDecoration(
                         color: Color(0xffF5F5F5),
                         image: DecorationImage(
-                          image: AssetImage(
-                            widget.product.imgURL3 ??
-                                'assets/placeholder_image.png',
-                          ),
+                          image: AssetImage(widget.product.imageUrl![2]
+                              .url), // Use the first image URL
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -126,10 +123,8 @@ class _ProductDetail1State extends State<ProductDetail1> {
                       decoration: BoxDecoration(
                         color: Color(0xffF5F5F5),
                         image: DecorationImage(
-                          image: AssetImage(
-                            widget.product.imgURL4 ??
-                                'assets/placeholder_image.png',
-                          ),
+                          image: AssetImage(widget.product.imageUrl![3]
+                              .url), // Use the first image URL
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -146,7 +141,8 @@ class _ProductDetail1State extends State<ProductDetail1> {
                 Center(
                   child: SmoothPageIndicator(
                     controller: Controller_shoes,
-                    count: 4,
+                    count: widget.product.imageUrl!
+                        .length, // Set the count based on imageUrl length
                     effect: WormEffect(
                       type: WormType.underground,
                       activeDotColor: BluePrimary.withOpacity(0.8),
