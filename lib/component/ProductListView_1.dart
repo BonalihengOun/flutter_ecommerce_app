@@ -51,7 +51,7 @@ class _Product_1State extends State<Product_1> {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(productMen[index]
-                              .imageUrl![index]
+                              .imageUrl![0]
                               .url), // Access the URL property
                           fit: BoxFit.fitWidth,
                         ),
@@ -87,7 +87,7 @@ class _Product_1State extends State<Product_1> {
                               height: 10,
                             ),
                             Text(
-                              '\$' + productMen[index].price.toString(),
+                              '\$' + productMen[index].disPrice.toString(),
                               style: TextStyle(
                                   fontSize: 20,
                                   fontFamily: 'NiraBold',
@@ -95,7 +95,7 @@ class _Product_1State extends State<Product_1> {
                             ),
                             SizedBox(height: 10),
                             Text(
-                              productMen[index].disPrice.toString(),
+                              productMen[index].price.toString(),
                               style: TextStyle(
                                   fontSize: 12,
                                   fontFamily: 'NiraSemi',

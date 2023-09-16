@@ -22,7 +22,7 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     const accentColor = Color(0xffffffff);
 
-    const double borderRadius = 5;
+    const double borderRadius = 10;
 
     return DecoratedBox(
       decoration: BoxDecoration(

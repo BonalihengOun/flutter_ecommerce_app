@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+
 import '../constants/colors.dart';
 
 class selectSized extends StatefulWidget {
@@ -31,7 +33,7 @@ class _selectSizedState extends State<selectSized> {
   Widget build(BuildContext context) {
     return Container(
       height: 55,
-      margin: EdgeInsets.only(left: 10),
+      margin: EdgeInsets.only(left: 16),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.type == 'sportwear'
@@ -50,13 +52,22 @@ class _selectSizedState extends State<selectSized> {
                 });
               },
               style: ButtonStyle(
-                shape: MaterialStatePropertyAll(
-                    CircleBorder(side: BorderSide.none)),
+                shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: BorderSide(width: 1))),
                 backgroundColor: selectedSize == size
-                    ? MaterialStateProperty.all<Color>(RedPrimary)
-                    : MaterialStateProperty.all<Color>(Dark.withOpacity(0.8)),
+                    ? MaterialStateProperty.all<Color>(Dark)
+                    : MaterialStateProperty.all<Color>(Colors.white),
               ),
-              child: Text(size),
+              child: Container(
+                child: Text(
+                  size,
+                  style: TextStyle(
+                    fontFamily: 'NiraBold',
+                    color: selectedSize == size ? Light : Dark,
+                  ),
+                ),
+              ),
             ),
           );
         },

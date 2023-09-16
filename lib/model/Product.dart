@@ -9,7 +9,7 @@ class Product {
   final List<ImageInfo>? imageUrl;
 
   final String name;
-  final double price;
+  final double? price;
   final double? disPrice;
   final String? discount;
   final String? type;
@@ -34,7 +34,7 @@ class Product {
   Product(
       {this.imageUrl,
       required this.name,
-      required this.price,
+      this.price,
       this.disPrice,
       required this.describtion,
       this.color1,
@@ -55,6 +55,8 @@ class Product {
       required this.styleColor1,
       required this.colorshown_1,
       this.discount});
+
+  get availableSizes => null;
 }
 
 List<Product> productMen = [
@@ -78,8 +80,8 @@ List<Product> productMen = [
                 'lib/assets/pic/category/Product/Nike_infinity_colors/Nike_infinityRN4_Blackwhite.png',
             color: '0xff100B11'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 133.00,
+      disPrice: 175.00,
       styleColor2: 'DR2665-101',
       styleColor3: 'DR2665-100',
       styleColor4: 'DR2665-001',
@@ -114,7 +116,7 @@ List<Product> productMen = [
             color: '0xffAFB792'),
       ],
       price: 175.00,
-      disPrice: 133,
+      disPrice: 175.00,
       styleColor1: 'FB7180-001',
       styleColor2: 'DV3853-003',
       styleColor3: 'DV3853-102',
@@ -148,8 +150,8 @@ List<Product> productMen = [
                 'lib/assets/pic/category/Product/Nike_runner_colors/Nike runner_white.png',
             color: '0xffB8EEE5'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 133,
+      disPrice: 175.00,
       styleColor1: 'DX5048-500',
       styleColor2: 'DX5048-400',
       styleColor3: 'DX5048-600',
@@ -183,8 +185,8 @@ List<Product> productMen = [
                 'lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit.png',
             color: '0xff424443'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 133,
+      disPrice: 175.00,
       colorshown_1: 'Sand Drift/Bronzine/Sand Drift/Bronzine',
       colorshown_2: 'Track Red/Track Red/Track Red/Mystic Red',
       colorshown_3: 'Baltic Blue/Green Abyss/Hot Punch/Citron Tint',
@@ -224,8 +226,8 @@ List<Product> sportswear = [
                 'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_Black.png',
             color: '0xff23272B'),
       ],
-      price: 24,
-      disPrice: 21.60,
+      price: 35.00,
+      disPrice: 17.5,
       styleColor1: '913011-363',
       styleColor2: '913011-686',
       styleColor3: '913011-532',
@@ -238,27 +240,30 @@ List<Product> sportswear = [
       type1: 'sportwear',
       describtion:
           "Crafted from soft fabric, the Nike Sportswear Heritage86 Futura Washed Hat has a 6-panel design for classic comfort and an adjustable closure for a personalized fit.",
-      discount: '10%'),
+      discount: '50%'),
   Product(
     name: "Nike Sportswear Tech Fleece",
     imageUrl: [
       ImageInfo(
         url:
             'lib/assets/pic/category/Product/SportWears/Nike Sportswear Tech Fleece.png',
+        color: '0xffF0EEEB',
       ),
     ],
-    price: 100.70,
+    price: 170.00,
     colorshown_1: 'Light Grey/Heather/Black',
     styleColor1: 'FN7124-013',
-    type1: 'Women_hoodie',
-    type: 'sportwear',
+    type: 'women_hoodie',
+    type1: 'sportwear',
     describtion:
         "Can you believe it's already been 10 years of Tech Fleece? We're celebrating the occasion with a modern silhouette and a colour palette inspired by natural minerals. Since 2013, our premium, lightweight fleece is smooth both inside and out—giving you plenty of warmth without unnecessary bulk. ",
   ),
   Product(
     name: "Nike SB",
     imageUrl: [
-      ImageInfo(url: 'lib/assets/pic/category/Product/SportWears/Nike SB.png')
+      ImageInfo(
+          url: 'lib/assets/pic/category/Product/SportWears/Nike SB.png',
+          color: '0xffFFD244'),
     ],
     price: 89.65,
     colorshown_1: 'University Gold',
@@ -273,7 +278,8 @@ List<Product> sportswear = [
     imageUrl: [
       ImageInfo(
           url:
-              'lib/assets/pic/category/Product/SportWears/sportswear_tech_fleece_windrunner_mens_full_zip_hoodie_rznlBf.jpeg')
+              'lib/assets/pic/category/Product/SportWears/sportswear_tech_fleece_windrunner_mens_full_zip_hoodie_rznlBf.jpeg',
+          color: '0xffF0EAD7')
     ],
     price: 145.00,
     colorshown_1: 'Coconut Milk/Black',
@@ -288,7 +294,8 @@ List<Product> sportswear = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/sportswear-tech-fleece-og-womens-loose-cape-S4zv0w.jpeg')
+                'lib/assets/pic/category/Product/SportWears/sportswear-tech-fleece-og-womens-loose-cape-S4zv0w.jpeg',
+            color: '0xffDCDCDA'),
       ],
       price: 150.00,
       colorshown_1: 'Dark Grey Heather/Black',
@@ -301,8 +308,10 @@ List<Product> sportswear = [
       name: "Nike Sportswear Phoenix Fleece",
       imageUrl: [
         ImageInfo(
-            url:
-                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Phoenix Fleece.png')
+          url:
+              'lib/assets/pic/category/Product/SportWears/Nike Sportswear Phoenix Fleece.png',
+          color: '0xff7B8D9C',
+        )
       ],
       price: 80.00,
       colorshown_1: 'Diffused Blue',
@@ -316,7 +325,8 @@ List<Product> sportswear = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Everyday Plus Cushioned.png')
+                'lib/assets/pic/category/Product/SportWears/Nike Everyday Plus Cushioned.png',
+            color: '0xff5A5958')
       ],
       price: 18.00,
       colorshown_1: 'Black/White',
@@ -330,28 +340,29 @@ List<Product> sportswear = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Everyday Wool.png'),
+                'lib/assets/pic/category/Product/SportWears/Nike Everyday Wool.png',
+            color: '0xff50879A'),
       ],
       price: 16.97,
+      disPrice: 22.00,
       colorshown_1: 'Multi-Color',
       styleColor1: 'DQ6397-904',
       type: 'sock',
       discount: '22%',
       type1: 'sportwear',
-      disPrice: 22.00,
       describtion:
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Peak",
       imageUrl: [
         ImageInfo(
-          url: 'lib/assets/pic/category/Product/SportWears/Nike Peak.png',
-        ),
+            url: 'lib/assets/pic/category/Product/SportWears/Nike Peak.png',
+            color: '0xff003145'),
       ],
       price: 30.00,
       colorshown_1: 'Noise Aqua/White',
       styleColor1: 'FB6529-440',
-      type: 'Hat',
+      type: 'Hat Peak',
       type1: 'sportwear',
       describtion:
           "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
@@ -360,7 +371,8 @@ List<Product> sportswear = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png')
+                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png',
+            color: '0xff6A6872'),
       ],
       price: 150.00,
       colorshown_1: 'Iron Grey/White',
@@ -376,11 +388,11 @@ List<Product> shoes_football = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png',
+                'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Mercurial Superfly_Orange.png',
             color: '0xffFEB187'),
       ],
-      price: 150.00,
-      disPrice: 75.00,
+      price: 75.0,
+      disPrice: 150.00,
       colorshown_1: 'Guava Ice/Black',
       styleColor1: 'DZ3475-800',
       type: 'football shoes',
@@ -395,8 +407,8 @@ List<Product> shoes_football = [
                 'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Mercurial Superfly_Pink.png',
             color: '0xffDE2A6E'),
       ],
-      price: 180.00,
-      disPrice: 90.00,
+      price: 90.00,
+      disPrice: 180.00,
       colorshown_1: 'Pink Blast/Gridiron/Volt',
       styleColor1: 'DJ5625-605',
       type: 'football shoes',
@@ -411,8 +423,8 @@ List<Product> shoes_football = [
                 'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Phantom GX Academy_BlackOrange.png',
             color: '0xff9C342F')
       ],
-      price: 100.00,
-      disPrice: 50.00,
+      price: 50.00,
+      disPrice: 100.00,
       colorshown_1: 'Bright Crimson/White/University Red/Black',
       styleColor1: 'DD9473-600',
       type: 'football shoes',
@@ -427,8 +439,8 @@ List<Product> shoes_football = [
                 'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Zoom Mercurial Vapor 15 Elite FG.png',
             color: '0xffAD1F4B')
       ],
-      price: 120.00,
-      disPrice: 60.00,
+      price: 60.00,
+      disPrice: 120.00,
       colorshown_1: 'Multi-Colour/Multi-Colour',
       styleColor1: 'DV3909-903',
       type: 'football shoes',
@@ -446,8 +458,8 @@ List<Product> nike_air_jordan = [
           color: '0xff004781',
         )
       ],
-      price: 300.00,
-      disPrice: 150.00,
+      price: 150.00,
+      disPrice: 300.00,
       colorshown_1: 'True Blue/Cement Grey/White',
       styleColor1: 'DZ5485-410',
       type: 'Sneaker',
@@ -463,8 +475,8 @@ List<Product> nike_air_jordan = [
           color: '0xffB7B6B9',
         )
       ],
-      price: 250.00,
-      disPrice: 125.00,
+      price: 125.00,
+      disPrice: 250.00,
       colorshown_1: 'White/Cement Grey/Anthracite/Topaz Gold',
       styleColor1: 'DQ8401-103',
       type: 'Sneaker',
@@ -480,8 +492,8 @@ List<Product> nike_air_jordan = [
           color: '0xff449AA1',
         ),
       ],
-      price: 200.00,
-      disPrice: 100.00,
+      disPrice: 200.00,
+      price: 100.00,
       colorshown_1: ' Bleached Aqua/White',
       styleColor1: 'DO5047-411',
       type: 'Sneaker',
@@ -494,11 +506,11 @@ List<Product> nike_air_jordan = [
         ImageInfo(
           url:
               'lib/assets/pic/category/Product/Nike Air Jordan/Jumpman MVP.png',
-          color: '0xff007036',
+          color: '0xffC4541F',
         ),
       ],
-      price: 650.00,
-      disPrice: 325.00,
+      price: 325.00,
+      disPrice: 650.00,
       colorshown_1: 'White/Vivid Orange/Black/Cardinal Red',
       styleColor1: 'DZ4475-168',
       type: 'Sneaker',
@@ -527,8 +539,8 @@ List<Product> Product_all = [
                 'lib/assets/pic/category/Product/Nike_infinity_colors/Nike_infinityRN4_Blackwhite.png',
             color: '0xff100B11'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 133.00,
+      disPrice: 175.00,
       styleColor2: 'DR2665-101',
       styleColor3: 'DR2665-100',
       styleColor4: 'DR2665-001',
@@ -555,15 +567,15 @@ List<Product> Product_all = [
             color: '0xffD9414E'),
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_BlackRed.png',
+                'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_White.png',
             color: '0xffEEEFF5'),
         ImageInfo(
             url:
                 'lib/assets/pic/category/Product/Nike_Pegasus_colors/Nike Pegasus_WhiteGreen.png',
             color: '0xffAFB792'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 87.5,
+      disPrice: 175.00,
       styleColor1: 'FB7180-001',
       styleColor2: 'DV3853-003',
       styleColor3: 'DV3853-102',
@@ -576,7 +588,7 @@ List<Product> Product_all = [
       type1: 'productMen',
       describtion:
           "A springy ride for any run, the Peg’s familiar,\n just-for-you feel returns to help you accomplish your goals. \nThis version has the same responsiveness and neutral support you love, \nbut with improved comfort in those sensitive areas of your foot,\nlike the arch and toes. Whether you’re logging long marathon miles, squeezing in a speed session before the sun goes down or hopping into a spontaneous group jaunt,\nit’s still the established road runner you can put your faith in, day after day, run after run.",
-      discount: '24%'),
+      discount: '50%'),
   Product(
       name: "Nike Runner",
       imageUrl: [
@@ -597,8 +609,8 @@ List<Product> Product_all = [
                 'lib/assets/pic/category/Product/Nike_runner_colors/Nike runner_white.png',
             color: '0xffB8EEE5'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 133,
+      disPrice: 175.00,
       styleColor1: 'DX5048-500',
       styleColor2: 'DX5048-400',
       styleColor3: 'DX5048-600',
@@ -632,8 +644,8 @@ List<Product> Product_all = [
                 'lib/assets/pic/category/Product/Nike Air VaporMax 2023 Flyknit/Nike Air VaporMax 2023 Flyknit.png',
             color: '0xff424443'),
       ],
-      price: 175.00,
-      disPrice: 133,
+      price: 133,
+      disPrice: 175.00,
       colorshown_1: 'Sand Drift/Bronzine/Sand Drift/Bronzine',
       colorshown_2: 'Track Red/Track Red/Track Red/Mystic Red',
       colorshown_3: 'Baltic Blue/Green Abyss/Hot Punch/Citron Tint',
@@ -666,9 +678,13 @@ List<Product> Product_all = [
             url:
                 'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_Black.png',
             color: '0xff23272B'),
+        ImageInfo(
+            url:
+                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Heritage86 Futura Washed_Black.png',
+            color: '0xff23272B'),
       ],
-      price: 24,
-      disPrice: 21.60,
+      price: 17.5,
+      disPrice: 35.00,
       styleColor1: '913011-363',
       styleColor2: '913011-686',
       styleColor3: '913011-532',
@@ -681,27 +697,30 @@ List<Product> Product_all = [
       type1: 'sportwear',
       describtion:
           "Crafted from soft fabric, the Nike Sportswear Heritage86 Futura Washed Hat has a 6-panel design for classic comfort and an adjustable closure for a personalized fit.",
-      discount: '10%'),
+      discount: '50%'),
   Product(
     name: "Nike Sportswear Tech Fleece",
     imageUrl: [
       ImageInfo(
         url:
             'lib/assets/pic/category/Product/SportWears/Nike Sportswear Tech Fleece.png',
+        color: '0xffF0EEEB',
       ),
     ],
-    price: 100.70,
+    price: 170.00,
     colorshown_1: 'Light Grey/Heather/Black',
     styleColor1: 'FN7124-013',
-    type1: 'Women_hoodie',
-    type: 'sportwear',
+    type: 'women_hoodie',
+    type1: 'sportwear',
     describtion:
         "Can you believe it's already been 10 years of Tech Fleece? We're celebrating the occasion with a modern silhouette and a colour palette inspired by natural minerals. Since 2013, our premium, lightweight fleece is smooth both inside and out—giving you plenty of warmth without unnecessary bulk. ",
   ),
   Product(
     name: "Nike SB",
     imageUrl: [
-      ImageInfo(url: 'lib/assets/pic/category/Product/SportWears/Nike SB.png')
+      ImageInfo(
+          url: 'lib/assets/pic/category/Product/SportWears/Nike SB.png',
+          color: '0xffFFD244'),
     ],
     price: 89.65,
     colorshown_1: 'University Gold',
@@ -716,7 +735,8 @@ List<Product> Product_all = [
     imageUrl: [
       ImageInfo(
           url:
-              'lib/assets/pic/category/Product/SportWears/sportswear_tech_fleece_windrunner_mens_full_zip_hoodie_rznlBf.jpeg')
+              'lib/assets/pic/category/Product/SportWears/sportswear_tech_fleece_windrunner_mens_full_zip_hoodie_rznlBf.jpeg',
+          color: '0xffF0EAD7')
     ],
     price: 145.00,
     colorshown_1: 'Coconut Milk/Black',
@@ -731,7 +751,8 @@ List<Product> Product_all = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/sportswear-tech-fleece-og-womens-loose-cape-S4zv0w.jpeg')
+                'lib/assets/pic/category/Product/SportWears/sportswear-tech-fleece-og-womens-loose-cape-S4zv0w.jpeg',
+            color: '0xffDCDCDA'),
       ],
       price: 150.00,
       colorshown_1: 'Dark Grey Heather/Black',
@@ -744,8 +765,10 @@ List<Product> Product_all = [
       name: "Nike Sportswear Phoenix Fleece",
       imageUrl: [
         ImageInfo(
-            url:
-                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Phoenix Fleece.png')
+          url:
+              'lib/assets/pic/category/Product/SportWears/Nike Sportswear Phoenix Fleece.png',
+          color: '0xff7B8D9C',
+        )
       ],
       price: 80.00,
       colorshown_1: 'Diffused Blue',
@@ -759,7 +782,8 @@ List<Product> Product_all = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Everyday Plus Cushioned.png')
+                'lib/assets/pic/category/Product/SportWears/Nike Everyday Plus Cushioned.png',
+            color: '0xff5A5958')
       ],
       price: 18.00,
       colorshown_1: 'Black/White',
@@ -773,28 +797,29 @@ List<Product> Product_all = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Everyday Wool.png'),
+                'lib/assets/pic/category/Product/SportWears/Nike Everyday Wool.png',
+            color: '0xff50879A'),
       ],
       price: 16.97,
+      disPrice: 22.00,
       colorshown_1: 'Multi-Color',
       styleColor1: 'DQ6397-904',
       type: 'sock',
       discount: '22%',
       type1: 'sportwear',
-      disPrice: 22.00,
       describtion:
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Peak",
       imageUrl: [
         ImageInfo(
-          url: 'lib/assets/pic/category/Product/SportWears/Nike Peak.png',
-        ),
+            url: 'lib/assets/pic/category/Product/SportWears/Nike Peak.png',
+            color: '0xff003145'),
       ],
       price: 30.00,
       colorshown_1: 'Noise Aqua/White',
       styleColor1: 'FB6529-440',
-      type: 'Hat',
+      type: 'Hat Peak',
       type1: 'sportwear',
       describtion:
           "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
@@ -803,7 +828,8 @@ List<Product> Product_all = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png')
+                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png',
+            color: '0xff6A6872'),
       ],
       price: 150.00,
       colorshown_1: 'Iron Grey/White',
@@ -817,11 +843,11 @@ List<Product> Product_all = [
       imageUrl: [
         ImageInfo(
             url:
-                'lib/assets/pic/category/Product/SportWears/Nike Sportswear Club PrimaLoft®.png',
+                'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Mercurial Superfly_Orange.png',
             color: '0xffFEB187'),
       ],
-      price: 150.00,
-      disPrice: 75.00,
+      price: 75.0,
+      disPrice: 150.00,
       colorshown_1: 'Guava Ice/Black',
       styleColor1: 'DZ3475-800',
       type: 'football shoes',
@@ -836,8 +862,8 @@ List<Product> Product_all = [
                 'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Mercurial Superfly_Pink.png',
             color: '0xffDE2A6E'),
       ],
-      price: 180.00,
-      disPrice: 90.00,
+      price: 90.00,
+      disPrice: 180.00,
       colorshown_1: 'Pink Blast/Gridiron/Volt',
       styleColor1: 'DJ5625-605',
       type: 'football shoes',
@@ -852,8 +878,8 @@ List<Product> Product_all = [
                 'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Phantom GX Academy_BlackOrange.png',
             color: '0xff9C342F')
       ],
-      price: 100.00,
-      disPrice: 50.00,
+      price: 50.00,
+      disPrice: 100.00,
       colorshown_1: 'Bright Crimson/White/University Red/Black',
       styleColor1: 'DD9473-600',
       type: 'football shoes',
@@ -868,8 +894,8 @@ List<Product> Product_all = [
                 'lib/assets/pic/category/Product/Nike Mercurial Superfly 9 Academy/Nike Zoom Mercurial Vapor 15 Elite FG.png',
             color: '0xffAD1F4B')
       ],
-      price: 120.00,
-      disPrice: 60.00,
+      price: 60.00,
+      disPrice: 120.00,
       colorshown_1: 'Multi-Colour/Multi-Colour',
       styleColor1: 'DV3909-903',
       type: 'football shoes',
@@ -885,8 +911,8 @@ List<Product> Product_all = [
           color: '0xff004781',
         )
       ],
-      price: 300.00,
-      disPrice: 150.00,
+      price: 150.00,
+      disPrice: 300.00,
       colorshown_1: 'True Blue/Cement Grey/White',
       styleColor1: 'DZ5485-410',
       type: 'Sneaker',
@@ -902,8 +928,8 @@ List<Product> Product_all = [
           color: '0xffB7B6B9',
         )
       ],
-      price: 250.00,
-      disPrice: 125.00,
+      price: 125.00,
+      disPrice: 250.00,
       colorshown_1: 'White/Cement Grey/Anthracite/Topaz Gold',
       styleColor1: 'DQ8401-103',
       type: 'Sneaker',
@@ -919,8 +945,8 @@ List<Product> Product_all = [
           color: '0xff449AA1',
         ),
       ],
-      price: 200.00,
-      disPrice: 100.00,
+      disPrice: 200.00,
+      price: 100.00,
       colorshown_1: ' Bleached Aqua/White',
       styleColor1: 'DO5047-411',
       type: 'Sneaker',
@@ -933,11 +959,11 @@ List<Product> Product_all = [
         ImageInfo(
           url:
               'lib/assets/pic/category/Product/Nike Air Jordan/Jumpman MVP.png',
-          color: '0xff007036',
+          color: '0xffC4541F',
         ),
       ],
-      price: 650.00,
-      disPrice: 325.00,
+      price: 325.00,
+      disPrice: 650.00,
       colorshown_1: 'White/Vivid Orange/Black/Cardinal Red',
       styleColor1: 'DZ4475-168',
       type: 'Sneaker',

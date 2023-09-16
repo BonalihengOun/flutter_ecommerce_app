@@ -33,7 +33,10 @@ class SearchInput extends StatelessWidget {
           //Do something wi
         },
         decoration: InputDecoration(
-          prefixIcon: Image.asset('lib/assets/pic/iconNavBar/Search.png'),
+          prefixIcon: Image.asset(
+            'lib/assets/pic/iconNavBar/Search.png',
+            color: Dark,
+          ),
           filled: true,
           fillColor: Colors.white,
           hintText: hintText,

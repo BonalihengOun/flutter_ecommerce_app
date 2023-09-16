@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               splashRadius: 20.5,
                               icon: Icon(
                                 Icons.favorite_border,
-                                color: Grey,
+                                color: Dark,
                                 size: 24,
                               ),
                             ),
@@ -64,6 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 'lib/assets/pic/NotificationIcon.png',
                                 width: 24,
                                 height: 24,
+                                color: Dark,
                               ),
                             ),
                           ],

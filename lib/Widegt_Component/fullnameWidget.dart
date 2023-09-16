@@ -86,7 +86,7 @@ class _fullnameFormState extends State<fullnameForm> {
               ),
               enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Grey, width: 1.0),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
             ),
           ),

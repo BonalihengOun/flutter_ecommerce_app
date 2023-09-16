@@ -89,7 +89,7 @@ class _Product_2State extends State<Product_2> {
                               height: 4,
                             ),
                             Text(
-                              '\$' + nike_air_jordan[index].price.toString(),
+                              '\$' + nike_air_jordan[index].disPrice.toString(),
                               style: TextStyle(
                                   fontSize: 15,
                                   fontFamily: 'NiraBold',
@@ -101,7 +101,7 @@ class _Product_2State extends State<Product_2> {
                             Row(
                               children: [
                                 Text(
-                                  nike_air_jordan[index].disPrice.toString(),
+                                  nike_air_jordan[index].price.toString(),
                                   style: TextStyle(
                                       fontSize: 12,
                                       fontFamily: 'NiraSemi',

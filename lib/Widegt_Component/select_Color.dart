@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
+import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 
 class SelectColor extends StatefulWidget {
-  const SelectColor({Key? key}) : super(key: key);
+  const SelectColor({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
+
+  final Product product;
 
   @override
   _SelectColorState createState() => _SelectColorState();
 }
 
 class _SelectColorState extends State<SelectColor> {
-  String selectedColor = "Black"; // Initialize with a default color
+  String selectedColor = ""; // Initialize with an empty string
 
-  // Define available colors for the product
-  final List<String> availableColors = ["Black", "White", "WhiteRed"];
+  @override
+  void initState() {
+    super.initState();
+    // Set the initial selected color to the first color in the imageUrl list
+    selectedColor = widget.product.imageUrl![0].color!;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,24 +32,27 @@ class _SelectColorState extends State<SelectColor> {
           height: 55,
           margin: EdgeInsets.only(left: 10),
           child: ListView.builder(
-            itemCount: availableColors.length,
+            itemCount: widget.product.imageUrl?.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              final color = availableColors[index];
+              final colorInfo = widget.product.imageUrl![index].color;
+
               Color backgroundColor = Colors.transparent;
               Color borderColor = Colors.transparent;
 
               // Assign custom background colors based on the color name
-              if (color == "Black") {
-                backgroundColor = Color(0xff3B4E77);
-              } else if (color == "White") {
-                backgroundColor = Color(0xffDD8E8B);
-              } else if (color == "WhiteRed") {
-                backgroundColor = Color(0xffC9D5A0);
+              if (colorInfo == widget.product.imageUrl![0].color) {
+                backgroundColor = Color(int.parse(colorInfo!));
+              } else if (colorInfo == widget.product.imageUrl![1].color) {
+                backgroundColor = Color(int.parse(colorInfo!));
+              } else if (colorInfo == widget.product.imageUrl![2].color) {
+                backgroundColor = Color(int.parse(colorInfo!));
+              } else if (colorInfo == widget.product.imageUrl![3].color) {
+                backgroundColor = Color(int.parse(colorInfo!));
               }
 
               // Check if the color is selected
-              if (selectedColor == color) {
+              if (selectedColor == colorInfo) {
                 // If selected, add a border to indicate selection
                 borderColor =
                     Colors.white; // You can customize the border color
@@ -49,12 +63,14 @@ class _SelectColorState extends State<SelectColor> {
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      selectedColor = color;
+                      selectedColor = colorInfo!;
                     });
                   },
                   style: ButtonStyle(
-                    shape: MaterialStatePropertyAll(
-                        CircleBorder(side: BorderSide.none)),
+                    shape: MaterialStateProperty.all(CircleBorder(
+                        side: BorderSide(
+                      width: 0.5,
+                    ))),
                     backgroundColor:
                         MaterialStateProperty.all<Color>(backgroundColor),
                   ),

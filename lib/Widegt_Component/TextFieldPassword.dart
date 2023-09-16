@@ -110,7 +110,7 @@ class _PasswordInputState extends State<PasswordInput> {
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               enabledBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(color: Grey, width: 1.0),
               ),
             ),

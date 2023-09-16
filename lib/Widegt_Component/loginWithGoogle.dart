@@ -30,9 +30,9 @@ class GoogleLoginButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: Colors.white,
           onPrimary: Grey.withOpacity(0.0),
-          elevation: 1,
+          elevation: 2,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(10),
           ),
         ),
       ),

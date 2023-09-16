@@ -43,61 +43,88 @@ class _CountdownTimerWidgetState extends State<CountdownTimerWidget> {
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final hours = _remainingTime.inHours;
-    final minutes = _remainingTime.inMinutes.remainder(60);
-    final seconds = _remainingTime.inSeconds.remainder(60);
-
-    return Row(
-      children: [
-        _buildTimeBox(hours.toString().padLeft(2, '0'), 'Hours'),
-        _buildColon(),
-        _buildTimeBox(minutes.toString().padLeft(2, '0'), 'Minutes'),
-        _buildColon(),
-        _buildTimeBox(seconds.toString().padLeft(2, '0'), 'Seconds'),
-      ],
-    );
-  }
-
   Widget _buildTimeBox(String value, String label) {
     return Column(
       children: [
         Container(
-          width: 40,
-          height: 40,
-          padding: EdgeInsets.all(8),
+          width: 30,
+          height: 30,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Light,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
             child: Text(
               value,
               style: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: Dark),
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Dark,
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 2),
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 9,
+              color: Colors.black,
+              fontFamily: 'NiraRegular',
             ),
           ),
         ),
       ],
     );
   }
-}
 
-Widget _buildColon() {
-  return Column(
-    children: [
-      Padding(
-        padding: const EdgeInsets.only(left: 5, top: 10, right: 5),
-        child: Text(
-          ":",
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+  Widget _buildColon() {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 15),
+          child: Text(
+            ":",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Dark,
+            ),
           ),
         ),
-      ),
-    ],
-  );
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final hours = _remainingTime.inHours.toString().padLeft(2, '0');
+    final minutes =
+        _remainingTime.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final seconds =
+        _remainingTime.inSeconds.remainder(60).toString().padLeft(2, '0');
+
+    return Row(
+      children: [
+        _buildTimeBox(hours, 'Hours'),
+        SizedBox(
+          width: 5,
+        ),
+        _buildColon(),
+        SizedBox(
+          width: 5,
+        ),
+        _buildTimeBox(minutes, 'Minutes'), // Add labels here
+        SizedBox(
+          width: 5,
+        ),
+        _buildColon(),
+        SizedBox(
+          width: 5,
+        ),
+        _buildTimeBox(seconds, 'Seconds'), // Add labels here
+      ],
+    );
+  }
 }

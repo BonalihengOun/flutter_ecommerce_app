@@ -1,10 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:flutter_sneaker_shop_ecommerce/component/Recommend_Product.GridView.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
+import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/Recommend_Card.dart';
 
 class Recommend_product extends StatefulWidget {
-  const Recommend_product({super.key});
+  const Recommend_product({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<Recommend_product> createState() => _Recommend_productState();

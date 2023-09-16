@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/CountDownDiscount.dart';
-import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 
 class Promotion extends StatefulWidget {
   const Promotion({
@@ -10,6 +9,8 @@ class Promotion extends StatefulWidget {
   @override
   State<Promotion> createState() => _Promotion_1State();
 }
+
+DateTime targetTime = DateTime(2023, 0, 0, 10, 10, 1);
 
 class _Promotion_1State extends State<Promotion> {
   @override
@@ -28,14 +29,21 @@ class _Promotion_1State extends State<Promotion> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
+              padding: const EdgeInsets.only(left: 20, top: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
                       Text(
-                        '50% ',
+                        'Up to ',
+                        style: TextStyle(
+                            fontFamily: 'NiraBold',
+                            fontSize: 14,
+                            color: Colors.black),
+                      ),
+                      Text(
+                        '100% ',
                         style: TextStyle(
                             fontFamily: 'NiraBold',
                             fontSize: 30,
@@ -57,14 +65,29 @@ class _Promotion_1State extends State<Promotion> {
                         fontSize: 14,
                         color: Colors.black),
                   ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Positioned(
+                    top: 1,
+                    left: 1,
+                    right: 1,
+                    bottom: 1,
+                    child: Padding(
+                        padding: const EdgeInsets.only(right: 15, top: 10),
+                        child: CountdownTimerWidget(
+                            targetTime: (DateTime.now().add(
+                          Duration(hours: 0, minutes: 0),
+                        )))),
+                  ),
                 ],
               ),
             ),
             Expanded(
               child: Container(
-                width: 280,
+                width: 290,
                 height: 185,
-                margin: EdgeInsets.only(left: 80, top: 15),
+                margin: EdgeInsets.only(left: 110, top: 15),
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
