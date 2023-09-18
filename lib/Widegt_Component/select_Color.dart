@@ -5,9 +5,11 @@ class SelectColor extends StatefulWidget {
   const SelectColor({
     Key? key,
     required this.product,
+    required this.onColorSelected,
   }) : super(key: key);
 
   final Product product;
+  final Function(String selectedColor) onColorSelected;
 
   @override
   _SelectColorState createState() => _SelectColorState();
@@ -64,6 +66,9 @@ class _SelectColorState extends State<SelectColor> {
                     setState(() {
                       selectedColor = colorInfo!;
                     });
+
+                    // Call the callback function with the selected color
+                    widget.onColorSelected(selectedColor);
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(CircleBorder(

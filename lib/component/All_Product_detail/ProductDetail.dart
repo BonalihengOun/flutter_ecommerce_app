@@ -18,7 +18,33 @@ class ProductDetail1 extends StatefulWidget {
 bool selectedSize = false;
 
 class _ProductDetail1State extends State<ProductDetail1> {
-  final Controller_shoes = PageController();
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void changeImage(String color) {
+    int index =
+        widget.product.imageUrl!.indexWhere((image) => image.color == color);
+    if (index >= 0) {
+      setState(() {
+        _pageController.animateToPage(
+          index,
+          duration: Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +133,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                   Container(
                     height: 240,
                     child: PageView(
-                      controller: Controller_shoes,
+                      controller: _pageController,
                       scrollDirection: Axis.horizontal,
                       children: [
                         Container(
@@ -182,7 +208,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                 if (isHatProduct || isShoesProduct)
                   Center(
                     child: SmoothPageIndicator(
-                      controller: Controller_shoes,
+                      controller: _pageController,
                       count: widget.product.imageUrl!
                           .length, // Set the count based on imageUrl length
                       effect: WormEffect(
@@ -296,6 +322,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                   padding: const EdgeInsets.only(bottom: 10),
                   child: SelectColor(
                     product: widget.product,
+                    onColorSelected: changeImage, // Pass the callback function
                   ),
                 ),
                 Padding(
