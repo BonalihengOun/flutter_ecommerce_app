@@ -30,8 +30,7 @@ class _Product_3State extends State<Product_3> {
             child: GridView.builder(
               padding: EdgeInsets.all(7),
               scrollDirection: Axis.vertical,
-              itemCount: Product_all.where((product) =>
-                  product.discount == null || product.disPrice == 0).length,
+              itemCount: product_discount.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10.0,
@@ -39,14 +38,14 @@ class _Product_3State extends State<Product_3> {
                   childAspectRatio: 0.63),
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                final product = Product_all[index];
+                final product = product_discount[index];
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            ProductDetail1(product: Product_all[index]),
+                            ProductDetail1(product: product_discount[index]),
                       ),
                     );
                   },
@@ -69,7 +68,7 @@ class _Product_3State extends State<Product_3> {
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(
-                                      Product_all[index].imageUrl![0].url),
+                                      product_discount[index].imageUrl![0].url),
                                   fit: BoxFit.fitHeight),
                             ),
                           ),
@@ -77,7 +76,7 @@ class _Product_3State extends State<Product_3> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                Product_all[index].name,
+                                product_discount[index].name,
                                 style: TextStyle(
                                     fontFamily: 'NiraSemi',
                                     fontSize: 13,
@@ -102,7 +101,7 @@ class _Product_3State extends State<Product_3> {
                                 height: 5,
                               ),
                               Text(
-                                '\$' + Product_all[index].price.toString(),
+                                '\$' + product_discount[index].price.toString(),
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontFamily: 'NiraBold',
@@ -113,7 +112,7 @@ class _Product_3State extends State<Product_3> {
                                   if (product.disPrice != null) ...[
                                     Text(
                                       '\$' +
-                                          Product_all[index]
+                                          product_discount[index]
                                               .disPrice
                                               .toString(),
                                       style: TextStyle(
@@ -125,7 +124,9 @@ class _Product_3State extends State<Product_3> {
                                     ),
                                     SizedBox(width: 8),
                                     Text(
-                                      Product_all[index].discount.toString() +
+                                      product_discount[index]
+                                              .discount
+                                              .toString() +
                                           ' Off',
                                       style: TextStyle(
                                         fontSize: 12,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 
 class SelectColor extends StatefulWidget {
