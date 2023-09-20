@@ -21,8 +21,8 @@ class _Promotion_1State extends State<Promotion> {
         child: Stack(
           children: [
             Container(
-              height: 170,
-              width: 330,
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.2,
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 208, 208, 208),
                 borderRadius: BorderRadius.circular(18),
@@ -85,8 +85,8 @@ class _Promotion_1State extends State<Promotion> {
             ),
             Expanded(
               child: Container(
-                width: 290,
-                height: 185,
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.23,
                 margin: EdgeInsets.only(left: 110, top: 15),
                 decoration: BoxDecoration(
                   image: DecorationImage(

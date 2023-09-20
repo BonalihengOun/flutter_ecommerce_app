@@ -38,8 +38,8 @@ class _EmailInputState extends State<EmailInput> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 50,
-          width: 350,
+          height: MediaQuery.of(context).size.height * 0.06,
+          width: MediaQuery.of(context).size.width * 0.85,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 offset: const Offset(12, 26),

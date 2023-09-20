@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/component/ProductListView_2.dart';
 import 'package:flutter_sneaker_shop_ecommerce/component/ProductListView_1.dart';
@@ -16,12 +18,35 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final Controller = PageController();
+  final PageController pageController = PageController();
+  final PageController indicatorController = PageController();
   final TextEditingController _searchInputController = TextEditingController();
+  Timer? timer;
+  int currentPage = 0;
+  @override
+  void initState() {
+    super.initState();
+
+    // Set up a timer to change the page every 3 seconds
+    timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (currentPage < 1) {
+        currentPage++; // Increment the page index
+      } else {
+        currentPage = 0; // Reset to the first page when reaching the end
+      }
+      // Use animateToPage to smoothly transition to the next page
+      pageController.animateToPage(
+        currentPage,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    });
+  }
 
   @override
   void dispose() {
-    Controller.dispose();
+    timer?.cancel(); // Cancel the timer when disposing of the widget
+    pageController.dispose();
     super.dispose();
   }
 
@@ -33,18 +58,19 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Stack(children: [
           SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 35, top: 10),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SearchInput(
-                          textController: _searchInputController,
-                          hintText: 'Search Product'),
-                      Container(
+                      Expanded(
+                        flex: 5,
+                        child: SearchInput(
+                            textController: _searchInputController,
+                            hintText: 'Search Product'),
+                      ),
+                      Expanded(
+                        flex: 2,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -81,17 +107,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     Column(
                       children: [
                         Container(
-                          height: 215,
-                          margin: EdgeInsets.only(left: 10),
+                          height: MediaQuery.of(context).size.height * 0.23,
+                          margin: EdgeInsets.only(left: 5),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: PageView(
-                              controller: Controller,
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                Promotion(),
-                                Recommend(),
-                              ],
+                            child: PageView.builder(
+                              controller: pageController,
+                              itemCount: 2, // Set the number of pages
+                              itemBuilder: (context, index) {
+                                //return Promotion and Recommend widgets here
+                                //based on the current index.
+                                return index == 0 ? Promotion() : Recommend();
+                              },
                             ),
                           ),
                         ),
@@ -100,7 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SmoothPageIndicator(
-                        controller: Controller,
+                        controller:
+                            pageController, // Use the new controller here
                         count: 2,
                         effect: WormEffect(
                           type: WormType.underground,
@@ -115,14 +143,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Category',
-                        style: TextStyle(
-                            fontFamily: 'NiraBold', fontSize: 14, color: Dark),
+                      Expanded(
+                        flex: 6,
+                        child: Text(
+                          'Category',
+                          style: TextStyle(
+                              fontFamily: 'NiraBold',
+                              fontSize: 14,
+                              color: Dark),
+                        ),
                       ),
                       TextButton(
                         onPressed: () {},
@@ -170,18 +203,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   right: 0,
                   child: Column(
                     children: [
-                      Product_1(),
+                      Expanded(
+                        flex: 0,
+                        child: Product_1(),
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              'Mega Sale',
-                              style: TextStyle(
-                                  fontFamily: 'NiraBold',
-                                  fontSize: 14,
-                                  color: Dark),
+                            Expanded(
+                              flex: 0,
+                              child: Text(
+                                'Mega Sale',
+                                style: TextStyle(
+                                    fontFamily: 'NiraBold',
+                                    fontSize: 14,
+                                    color: Dark),
+                              ),
                             ),
                             TextButton(
                               onPressed: () {},
@@ -196,7 +235,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      Product_2(),
+                      Expanded(
+                        flex: 0,
+                        child: Product_2(),
+                      ),
                     ],
                   ),
                 ),

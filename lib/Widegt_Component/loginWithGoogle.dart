@@ -4,13 +4,13 @@ import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 class GoogleLoginButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const GoogleLoginButton({required this.onPressed});
+  const GoogleLoginButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 350,
-      height: 50,
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.06,
+      width: MediaQuery.of(context).size.width * 0.85,
       child: ElevatedButton.icon(
         onPressed: onPressed,
         icon: Image.asset(
@@ -19,7 +19,7 @@ class GoogleLoginButton extends StatelessWidget {
           height: 24,
           alignment: Alignment(-16, 0),
         ), // Replace with the actual icon
-        label: Text(
+        label: const Text(
           'Login with Google',
           style: TextStyle(
               fontSize: 14,

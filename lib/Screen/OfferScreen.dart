@@ -6,7 +6,7 @@ import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/Recommend_Product.
 import 'package:flutter_sneaker_shop_ecommerce/offer%20Banner/SuperFlashSale.dart';
 
 class Offer_screen extends StatefulWidget {
-  const Offer_screen({super.key});
+  const Offer_screen({Key? key}) : super(key: key);
 
   @override
   State<Offer_screen> createState() => _Offer_screenState();
@@ -53,8 +53,8 @@ class _Offer_screenState extends State<Offer_screen> {
                       ),
                       Center(
                         child: Container(
-                          width: 340,
-                          height: 80,
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          height: MediaQuery.of(context).size.height * 0.1,
                           margin: EdgeInsets.only(top: 30),
                           decoration: BoxDecoration(
                             color: Dark,
@@ -77,23 +77,26 @@ class _Offer_screenState extends State<Offer_screen> {
                           padding: const EdgeInsets.only(left: 20, top: 130),
                           child: Column(
                             children: [
+                              SizedBox(
+                                height: 10,
+                              ),
                               GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => SuperFlashSale(),
-                                      ),
-                                    );
-                                  },
-                                  child: Promotion()),
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => SuperFlashSale(),
+                                    ),
+                                  );
+                                },
+                                child: Promotion(),
+                              ),
                               Recommend(),
                             ],
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 450, left: 60),
+                        padding: const EdgeInsets.only(top: 465, left: 60),
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(

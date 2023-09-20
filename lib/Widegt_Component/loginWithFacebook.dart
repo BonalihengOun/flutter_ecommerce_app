@@ -9,8 +9,8 @@ class FacebookLoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
-      height: 50,
+      height: MediaQuery.of(context).size.height * 0.06,
+          width: MediaQuery.of(context).size.width * 0.85,
       child: ElevatedButton.icon(
         onPressed: onPressed,
         icon: Image.asset(

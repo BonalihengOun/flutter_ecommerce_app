@@ -48,8 +48,8 @@ class _PasswordInputState extends State<PasswordInput> {
           height: 8,
         ),
         Container(
-          height: 50,
-          width: 350,
+          height: MediaQuery.of(context).size.height * 0.06,
+          width: MediaQuery.of(context).size.width * 0.85,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 offset: const Offset(12, 26),

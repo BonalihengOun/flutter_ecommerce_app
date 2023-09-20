@@ -157,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                           fontFamily: 'NiraBold',
                           fontSize: 12,
-                          color: BluePrimary,
+                          color: Dark,
                           letterSpacing: 0.5),
                     ),
                   ),

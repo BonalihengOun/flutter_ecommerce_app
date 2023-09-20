@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/CountDownDiscount.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
@@ -22,8 +20,8 @@ class _RecommendState extends State<Recommend> {
         child: Stack(
           children: [
             Container(
-              height: 180,
-              width: 330,
+              height: MediaQuery.of(context).size.height * 0.20,
+              width: MediaQuery.of(context).size.width * 0.8,
               decoration: BoxDecoration(
                 color: Color(0xffBB801C),
                 borderRadius: BorderRadius.circular(18),

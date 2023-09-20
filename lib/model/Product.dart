@@ -92,7 +92,7 @@ List<Product> productMen = [
       type: 'Shoes',
       describtion:
           "Nike InfinityRN 4 is a brand-new take on a familiar favourite.\tIt's made from our all-new Nike ReactX foam, which gives you 13% more energy return compared with Nike React foam, to help you stay fresh and bouncy. (What's more? Nike ReactX reduces the carbon footprint of the midsole by at least 43% compared with Nike React foam, so it helps support the planet, too).",
-      discount: '50%'),
+      discount: '24%'),
   Product(
       name: "Nike Air Pegasus",
       imageUrl: [
@@ -127,7 +127,7 @@ List<Product> productMen = [
       type1: 'productMen',
       describtion:
           "A springy ride for any run, the Peg’s familiar,\n just-for-you feel returns to help you accomplish your goals. \nThis version has the same responsiveness and neutral support you love, \nbut with improved comfort in those sensitive areas of your foot,\nlike the arch and toes. Whether you’re logging long marathon miles, squeezing in a speed session before the sun goes down or hopping into a spontaneous group jaunt,\nit’s still the established road runner you can put your faith in, day after day, run after run.",
-      discount: '24%'),
+      discount: '50%'),
   Product(
       name: "Nike Runner",
       imageUrl: [
