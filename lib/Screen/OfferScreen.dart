@@ -61,13 +61,32 @@ class _Offer_screenState extends State<Offer_screen> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Text(
-                              'Use “MEGSL” Cupon For \nGet 90%off',
-                              style: TextStyle(
-                                  fontFamily: "NiraBold",
-                                  color: Light,
-                                  letterSpacing: 0.5),
+                            padding: EdgeInsets.only(left: 25, top: 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    'Use “MEGSL” Cupon For',
+                                    style: TextStyle(
+                                        fontFamily: "NiraBold",
+                                        color: Light,
+                                        letterSpacing: 0.5),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 3,
+                                  child: Text(
+                                    'Get 90%off',
+                                    style: TextStyle(
+                                        fontFamily: "NiraBold",
+                                        color: Light,
+                                        fontSize: 22,
+                                        letterSpacing: 0.5),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),

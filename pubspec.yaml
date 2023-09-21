@@ -39,7 +39,10 @@ dependencies:
   custom_navigation_bar: ^0.8.2
   smooth_page_indicator: ^1.1.0
   flutter_rating_bar: ^4.0.1
-
+  firebase_core: ^2.16.0
+  firebase_auth: ^4.10.0
+  firebase_storage: ^11.2.7
+  cloud_firestore: ^4.9.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/HomePage.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/SignIn.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/TextFieldPasswor
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/loginWithFacebook.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/loginWithGoogle.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
+import 'package:flutter_sneaker_shop_ecommerce/firebase/firebase_auth_service.dart';
 import 'package:flutter_sneaker_shop_ecommerce/pages/Registerform.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,8 +20,18 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final firebaseAuthService _auth = firebaseAuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool _isSigning = false;
+  @override
+  void dispose() {
+    // TODO: implement dispose
+
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,11 +83,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SignInButton(
                 text: 'Sign In',
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (_) => HomePage(),
-                  ));
-                },
+                onPressed: _signIn,
                 right: 150,
                 left: 150,
                 top: 15,
@@ -148,9 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => Register(),
-                      ));
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Register()), (route) => false);
                     },
                     child: Text(
                       'Register',
@@ -168,5 +174,18 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print('Successfully SignedIn');
+    } else {
+      print('Some error happend');
+    }
   }
 }
