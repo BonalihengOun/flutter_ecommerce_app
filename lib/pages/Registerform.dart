@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/SignIn.dart';
@@ -121,7 +123,7 @@ class _RegisterState extends State<Register> {
                       style: TextStyle(
                           fontFamily: 'NiraBold',
                           fontSize: 12,
-                          color: BluePrimary,
+                          color: Dark,
                           letterSpacing: 0.5),
                     ),
                   ),
@@ -136,16 +138,52 @@ class _RegisterState extends State<Register> {
 
   void _signUp() async {
     String fullname = _fullnameController.text;
-    String email = _EmailController.text;
+    String email =
+        _EmailController.text.trim(); // Trim to remove leading/trailing spaces
     String password = _PasswordformController.text;
     String confirmPassword = _ConfirmPWController.text;
+
+    if (email.isEmpty || !isValidEmail(email)) {
+      // Handle invalid email format
+      print('Invalid email address format');
+      return;
+    }
+
+    if (password != confirmPassword) {
+      // Handle password confirmation mismatch
+      print('Password confirmation does not match');
+      return;
+    }
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(
+            backgroundColor: Light,
+            color: Dark,
+          ),
+        );
+      },
+    );
 
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print('Successfully created');
+      // Sign-up was successful, navigate to the login page.
+      print('Successfully Created account');
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
     } else {
-      print('Some error happend');
+      // Handle the case where sign-up failed (e.g., display an error message).
+      print('Some error happened during sign-up');
+      Navigator.pop(context); // Remove the dialog if sign-up failed
     }
+  }
+
+  bool isValidEmail(String email) {
+    // Simple email format validation using a regular expression
+    final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+    return emailRegex.hasMatch(email);
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
+import 'package:flutter_sneaker_shop_ecommerce/firebase/Auth_page.dart';
 import 'package:flutter_sneaker_shop_ecommerce/pages/loginPage.dart';
 
 class splashscreen extends StatefulWidget {

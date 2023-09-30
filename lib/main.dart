@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/pages/splashscreen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Initialize Firebase
-  runApp(MyApp());
+  WidgetsFlutterBinding
+      .ensureInitialized(); // Ensure that Flutter is initialized.
+  await Firebase.initializeApp(); // Initialize Firebase.
+
+  runApp(MyApp()); // Replace MyApp with your app's main widget.
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

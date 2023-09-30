@@ -57,15 +57,19 @@ class _fullnameFormState extends State<fullnameForm> {
                 fontSize: 16, fontFamily: 'NiraBold', color: Grey),
             decoration: InputDecoration(
               prefixIcon: _hasText
-                  ? Image.asset(
-                      'lib/assets/pic/UserBlue.png',
-                      alignment: Alignment(0.3, 0),
+                  ? Padding(
+                      padding: const EdgeInsets.only(right: 11),
+                      child: Image.asset(
+                        'lib/assets/pic/UserBlue.png',
+                        alignment: Alignment(0.3, 0),
+                        color: Dark,
+                      ),
                     )
                   : Padding(
                       padding: const EdgeInsets.only(right: 11),
                       child: Image.asset(
                         'lib/assets/pic/UserIcon.png',
-                        alignment: Alignment(0.4, 0),
+                        alignment: Alignment(0.3, 0),
                       ),
                     ),
               filled: true,

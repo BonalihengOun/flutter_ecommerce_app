@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sneaker_shop_ecommerce/HomePage.dart';
@@ -23,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   final firebaseAuthService _auth = firebaseAuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool _isSigning = false;
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -81,11 +83,14 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 40,
               ),
+              SizedBox(
+                height: 21,
+              ),
               SignInButton(
-                text: 'Sign In',
+                text: 'Login',
                 onPressed: _signIn,
-                right: 150,
-                left: 150,
+                right: 155,
+                left: 155,
                 top: 15,
                 bottom: 15,
               ),
@@ -156,7 +161,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Register()), (route) => false);
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => Register()),
+                          (route) => false);
                     },
                     child: Text(
                       'Register',
@@ -177,15 +185,34 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _signIn() async {
-    String email = _emailController.text;
+    String email =
+        _emailController.text.trim(); // Trim to remove leading/trailing spaces
+
     String password = _passwordController.text;
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(
+            backgroundColor: Light,
+            color: Dark,
+          ),
+        );
+      },
+    );
 
     User? user = await _auth.signInWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print('Successfully SignedIn');
+      // Sign-in was successful, navigate to the home page.
+      print('Successfully Logged in');
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     } else {
-      print('Some error happend');
+      // Handle the case where sign-in failed (e.g., display an error message).
+      print('Some error happened during sign-in');
+      Navigator.pop(context); // Remove the dialog if sign-in failed
     }
   }
 }
