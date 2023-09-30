@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/select_Color.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/select_size.dart';
+import 'package:flutter_sneaker_shop_ecommerce/component/product_all.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import your Product class
@@ -106,6 +107,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
+            //imgURl_product
             Column(
               children: [
                 if (isShoesFootball ||
@@ -202,206 +204,410 @@ class _ProductDetail1State extends State<ProductDetail1> {
             SizedBox(
               height: 10,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (isHatProduct || isShoesProduct)
-                  Center(
-                    child: SmoothPageIndicator(
-                      controller: _pageController,
-                      count: widget.product.imageUrl!
-                          .length, // Set the count based on imageUrl length
-                      effect: WormEffect(
-                        type: WormType.underground,
-                        activeDotColor: Dark,
-                        dotHeight: 8,
-                        dotWidth: 8,
-                        dotColor: Grey,
-                        spacing: 10,
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //SmoothPageIndicator
+                  if (isHatProduct || isShoesProduct)
+                    Center(
+                      child: SmoothPageIndicator(
+                        controller: _pageController,
+                        count: widget.product.imageUrl!
+                            .length, // Set the count based on imageUrl length
+                        effect: WormEffect(
+                          type: WormType.underground,
+                          activeDotColor: Dark,
+                          dotHeight: 8,
+                          dotWidth: 8,
+                          dotColor: Grey,
+                          spacing: 10,
+                        ),
+                      ),
+                    ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  //Product_name_and_favorite
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 22),
+                          child: Text(
+                            widget.product.name,
+                            style: TextStyle(
+                                fontFamily: 'NiraBold',
+                                fontSize: 22,
+                                color: Dark),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: IconButton(
+                          splashRadius: 20,
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite,
+                            color: RedPrimary,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  //Rating Star
+                  Expanded(
+                    flex: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 22),
+                      child: RatingBar.builder(
+                        initialRating: 3.5,
+                        minRating: 1,
+                        itemSize: 20,
+                        direction: Axis.horizontal,
+                        allowHalfRating: true,
+                        itemCount: 5,
+                        itemBuilder: (context, _) => Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                        ),
+                        onRatingUpdate: (rating) {
+                          print(rating);
+                        },
                       ),
                     ),
                   ),
-                SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 22),
-                        child: Text(
-                          widget.product.name,
+                  SizedBox(
+                    height: 18,
+                  ),
+                  Expanded(
+                    flex: 0,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 25),
+                      child: Text(
+                        '\$' + widget.product.price.toString(),
+                        style: TextStyle(
+                            fontSize: 28, fontFamily: 'NiraSemi', color: Dark),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Text(
+                      'Select Size',
+                      style: TextStyle(
+                          fontSize: 14, fontFamily: 'NiraBold', color: Dark),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  //Select_Sized
+                  selectSized(
+                    type: widget.product.type1.toString(),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  //Select_color
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Text(
+                      'Select Color',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'NiraBold',
+                        color: Dark,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: SelectColor(
+                      product: widget.product,
+                      onColorSelected:
+                          changeImage, // Pass the callback function
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Text(
+                      'Specification',
+                      style: TextStyle(
+                          fontSize: 14, fontFamily: 'NiraBold', color: Dark),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 25, right: 25, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Shown',
                           style: TextStyle(
-                              fontFamily: 'NiraBold',
-                              fontSize: 22,
+                              fontSize: 14,
+                              fontFamily: 'NiraRegular',
                               color: Dark),
                         ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 15),
-                      child: IconButton(
-                        splashRadius: 20,
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.favorite,
-                          color: RedPrimary,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 22),
-                  child: RatingBar.builder(
-                    initialRating: 3.5,
-                    minRating: 1,
-                    itemSize: 20,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
-                    onRatingUpdate: (rating) {
-                      print(rating);
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                    '\$' + widget.product.price.toString(),
-                    style: TextStyle(
-                        fontSize: 28, fontFamily: 'NiraSemi', color: Dark),
-                  ),
-                ),
-                SizedBox(
-                  height: 24,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                    'Select Size',
-                    style: TextStyle(
-                        fontSize: 14, fontFamily: 'NiraBold', color: Dark),
-                  ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                selectSized(
-                  type: widget.product.type1.toString(),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                    'Select Color',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'NiraBold',
-                      color: Dark,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 10),
-                  child: SelectColor(
-                    product: widget.product,
-                    onColorSelected: changeImage, // Pass the callback function
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Text(
-                    'Specification',
-                    style: TextStyle(
-                        fontSize: 14, fontFamily: 'NiraBold', color: Dark),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25, right: 25, top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Shown',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: 'NiraRegular',
-                            color: Dark),
-                      ),
-                      Text(
-                        widget.product.colorshown_1,
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: 'NiraRegular',
-                            color: Dark),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Style',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: 'NiraRegular',
-                            color: Dark),
-                      ),
-                      Text(
-                        widget.product.styleColor1,
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: 'NiraRegular',
-                            color: Dark),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 1.2,
-                        bottom: 0,
-                        child: Text(
-                          widget.product.describtion,
+                        Text(
+                          widget.product.colorshown_1,
                           style: TextStyle(
+                              fontSize: 14,
                               fontFamily: 'NiraRegular',
-                              color: Grey,
-                              letterSpacing: 0.5),
+                              color: Dark),
                         ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 25, vertical: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Style',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'NiraRegular',
+                              color: Dark),
+                        ),
+                        Text(
+                          widget.product.styleColor1,
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'NiraRegular',
+                              color: Dark),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          right: 1.2,
+                          bottom: 0,
+                          child: Text(
+                            widget.product.describtion,
+                            style: TextStyle(
+                                fontFamily: 'NiraRegular',
+                                color: Grey,
+                                letterSpacing: 0.5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: Text(
+                                'Review Product',
+                                style: TextStyle(
+                                    fontFamily: 'NiraBold', fontSize: 14),
+                              ),
+                            ),
+                            Expanded(
+                              flex: 1,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  'See More',
+                                  style: TextStyle(
+                                      fontFamily: "NiraBold", color: Dark),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 0,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                              child: RatingBar.builder(
+                                initialRating: 3.5,
+                                minRating: 1,
+                                itemSize: 20,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemBuilder: (context, _) => Icon(
+                                  Icons.star,
+                                  color: Colors.amber,
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Text(
+                                  " 4.5 ",
+                                  style: TextStyle(
+                                      fontFamily: 'NiraBold', color: Grey),
+                                ),
+                                Text(
+                                  '(5 Review)',
+                                  style: TextStyle(
+                                      fontFamily: 'NiraRegular', color: Grey),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.1,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.1,
+                                  child: Image.asset(
+                                      'lib/assets/pic/Ellipse 119.png'),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'James Lawson',
+                                      style: TextStyle(fontFamily: 'NiraBold'),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    RatingBar.builder(
+                                      initialRating: 3.5,
+                                      minRating: 1,
+                                      itemSize: 22,
+                                      direction: Axis.horizontal,
+                                      allowHalfRating: true,
+                                      itemCount: 5,
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                      ),
+                                      onRatingUpdate: (rating) {
+                                        print(rating);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 25, top: 16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Positioned(
+                                  top: 0,
+                                  left: 0,
+                                  right: 1.2,
+                                  bottom: 0,
+                                  child: Text(
+                                    widget.product.describtion,
+                                    style: TextStyle(
+                                        fontFamily: 'NiraRegular',
+                                        color: Grey,
+                                        letterSpacing: 0.5),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 25, top: 10),
+                            child: Text(
+                              'You also Might Like',
+                              style: TextStyle(
+                                  fontFamily: 'NiraBold', fontSize: 14),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                )
-              ],
+                  SizedBox(
+                    height: 18,
+                  ),
+                  Product_all_gridView(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+
+                        primary: Dark,
+                        // Change the button's background color
+                        onPrimary: Colors.white,
+                        // Change the text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              14.0), // Set the border radius
+                        ),
+
+                        minimumSize: Size(
+                            MediaQuery.of(context).size.width * 0.90,
+                            MediaQuery.of(context).size.height *
+                                0.065), // Set the width and height
+                      ),
+                      child: Text(
+                        "Add to Cart",
+                        style: TextStyle(fontFamily: "NiraBold"),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

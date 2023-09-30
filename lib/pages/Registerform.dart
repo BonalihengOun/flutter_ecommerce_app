@@ -137,7 +137,6 @@ class _RegisterState extends State<Register> {
   }
 
   void _signUp() async {
-    String fullname = _fullnameController.text;
     String email =
         _EmailController.text.trim(); // Trim to remove leading/trailing spaces
     String password = _PasswordformController.text;
