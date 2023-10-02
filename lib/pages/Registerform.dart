@@ -20,7 +20,7 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final firebaseAuthService _auth = firebaseAuthService();
   final TextEditingController _fullnameController = TextEditingController();
-  final TextEditingController _EmailController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _PasswordformController = TextEditingController();
   final TextEditingController _ConfirmPWController = TextEditingController();
 
@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
   void dispose() {
     // TODO: implement dispose
     _fullnameController.dispose();
-    _EmailController.dispose();
+    _emailController.dispose();
     _ConfirmPWController.dispose();
     _PasswordformController.dispose();
     super.dispose();
@@ -78,7 +78,7 @@ class _RegisterState extends State<Register> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   fullnameForm(inputController: _fullnameController),
-                  EmailInput(inputController: _EmailController),
+                  EmailInput(inputController: _emailController),
                   PasswordInput(
                     inputController: _PasswordformController,
                     text: 'Password',
@@ -137,8 +137,9 @@ class _RegisterState extends State<Register> {
   }
 
   void _signUp() async {
+    String fullname = _fullnameController.text;
     String email =
-        _EmailController.text.trim(); // Trim to remove leading/trailing spaces
+        _emailController.text.trim(); // Trim to remove leading/trailing spaces
     String password = _PasswordformController.text;
     String confirmPassword = _ConfirmPWController.text;
 

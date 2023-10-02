@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Screen/AccountScreen.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Screen/CartScreen.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Screen/ExploreScreen.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Screen/HomeScreen.dart';
 import 'package:flutter_sneaker_shop_ecommerce/Screen/OfferScreen.dart';
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _screen = [
     HomeScreen(),
     Explore(),
-    Card(),
+    Cart_screen(),
     Offer_screen(),
     Account(),
   ];

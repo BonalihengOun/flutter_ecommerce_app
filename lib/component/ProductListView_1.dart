@@ -36,7 +36,7 @@ class _Product_1State extends State<Product_1> {
                 );
               },
               child: Container(
-                width: 390,
+                width: MediaQuery.of(context).size.width * 9,
                 decoration: BoxDecoration(
                   color: Color(0xffF6F6F6),
                   borderRadius: BorderRadius.circular(18),

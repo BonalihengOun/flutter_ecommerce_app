@@ -5,6 +5,8 @@ import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/select_size.dart
 import 'package:flutter_sneaker_shop_ecommerce/component/product_all.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
+import 'package:flutter_sneaker_shop_ecommerce/state_management/cart_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'; // Import your Product class
 
 class ProductDetail1 extends StatefulWidget {
@@ -59,6 +61,8 @@ class _ProductDetail1State extends State<ProductDetail1> {
         widget.product.type == 'Water-Repellent Puffer Vest';
     bool isHatPeak = widget.product.type == 'Hat Peak';
     bool isSneaker = widget.product.type == 'Sneaker';
+    final CartProvider _cartProvider =
+        Provider.of<CartProvider>(context, listen: false);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -579,7 +583,9 @@ class _ProductDetail1State extends State<ProductDetail1> {
                   ),
                   Center(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _cartProvider.addToCart(widget.product);
+                      },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
 
@@ -603,6 +609,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                       ),
                     ),
                   ),
+
                   SizedBox(
                     height: 30,
                   ),

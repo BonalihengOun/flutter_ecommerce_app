@@ -20,6 +20,7 @@ class _Product_all_gridViewState extends State<Product_all_gridView> {
         scrollDirection: Axis.horizontal,
         itemCount: Product_all.length,
         itemBuilder: (context, index) {
+          final product = Product_all[index];
           return Padding(
             padding: const EdgeInsets.only(left: 20),
             child: GestureDetector(
@@ -28,7 +29,7 @@ class _Product_all_gridViewState extends State<Product_all_gridView> {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        ProductDetail1(product: Product_all[index]),
+                        ProductDetail1(product: Product_all[index],),
                   ),
                 );
               },
@@ -90,7 +91,7 @@ class _Product_all_gridViewState extends State<Product_all_gridView> {
                             Text(
                               '\$' + Product_all[index].price.toString(),
                               style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 18,
                                   fontFamily: 'NiraBold',
                                   color: Dark),
                             ),
@@ -99,24 +100,26 @@ class _Product_all_gridViewState extends State<Product_all_gridView> {
                             ),
                             Row(
                               children: [
-                                Text(
-                                  Product_all[index].disPrice.toString(),
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'NiraSemi',
-                                      color: Grey,
-                                      decoration: TextDecoration.lineThrough),
-                                ),
-                                SizedBox(width: 8),
-                                Text(
-                                  Product_all[index].discount.toString() +
-                                      'Off',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: 'NiraSemi',
-                                    color: RedPrimary,
+                                if (product.disPrice != null) ...[
+                                  Text(
+                                    Product_all[index].disPrice.toString(),
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        fontFamily: 'NiraSemi',
+                                        color: Grey,
+                                        decoration: TextDecoration.lineThrough),
                                   ),
-                                ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    Product_all[index].discount.toString() +
+                                        'Off',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                      fontFamily: 'NiraSemi',
+                                      color: RedPrimary,
+                                    ),
+                                  ),
+                                ],
                               ],
                             ),
                           ],
