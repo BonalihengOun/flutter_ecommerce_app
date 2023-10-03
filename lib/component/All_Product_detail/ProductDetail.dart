@@ -61,7 +61,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
         widget.product.type == 'Water-Repellent Puffer Vest';
     bool isHatPeak = widget.product.type == 'Hat Peak';
     bool isSneaker = widget.product.type == 'Sneaker';
-    final CartProvider _cartProvider =
+    final CartProvider cartProvider =
         Provider.of<CartProvider>(context, listen: false);
     return Scaffold(
       backgroundColor: Colors.white,
@@ -584,7 +584,7 @@ class _ProductDetail1State extends State<ProductDetail1> {
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
-                        _cartProvider.addToCart(widget.product);
+                        cartProvider.addToCart(widget.product);
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
