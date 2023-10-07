@@ -9,6 +9,7 @@ class Product {
   final List<ImageInfo>? imageUrl;
   int quantity;
   final String name;
+  bool isFavorite;
   final double? price;
   final double? disPrice;
   final String? discount;
@@ -38,6 +39,7 @@ class Product {
       this.disPrice,
       required this.describtion,
       required this.quantity,
+      required this.isFavorite,
       this.color1,
       this.color2,
       this.color3,
@@ -61,6 +63,7 @@ class Product {
 List<Product> productMen = [
   Product(
       name: "Nike InfinityRN4 Midnight",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -97,6 +100,7 @@ List<Product> productMen = [
       discount: '24%'),
   Product(
       name: "Nike Air Pegasus",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -133,6 +137,7 @@ List<Product> productMen = [
       discount: '50%'),
   Product(
       name: "Nike Runner",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -169,6 +174,7 @@ List<Product> productMen = [
       discount: '24%'),
   Product(
       name: "Nike Air VaporMax 2023 Flyknit",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -207,6 +213,7 @@ List<Product> productMen = [
 List<Product> sportswear = [
   Product(
       name: "Nike Sportswear Heritage86 Futura",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -247,6 +254,7 @@ List<Product> sportswear = [
       discount: '50%'),
   Product(
     name: "Nike Sportswear Tech Fleece",
+    isFavorite: false,
     quantity: 0,
     imageUrl: [
       ImageInfo(
@@ -265,6 +273,7 @@ List<Product> sportswear = [
   ),
   Product(
     name: "Nike SB",
+    isFavorite: false,
     quantity: 0,
     imageUrl: [
       ImageInfo(
@@ -281,6 +290,7 @@ List<Product> sportswear = [
   ),
   Product(
     name: "Nike Sportswear Tech Fleece Windrunner",
+    isFavorite: false,
     quantity: 0,
     imageUrl: [
       ImageInfo(
@@ -298,6 +308,7 @@ List<Product> sportswear = [
   ),
   Product(
       name: "Nike Sportswear Tech Fleece OG",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -314,6 +325,7 @@ List<Product> sportswear = [
           "Can you believe it's already been 10 years of Tech Fleece? We’re celebrating the occasion by bringing back the tailored lines and sleek details from the original design. Our premium, lightweight fleece–smooth both inside and out–gives you plenty of warmth without adding bulk.Complete your look with matching joggers or your favorite pair of leggings. The future of fleece starts here."),
   Product(
       name: "Nike Sportswear Phoenix Fleece",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -331,6 +343,7 @@ List<Product> sportswear = [
           "With eye-catching stripes and a voluminous fit, this Phoenix Fleece sweatshirt gives you a look that's anything but basic. Midweight brushed fleece feels extra soft on the inside and smooth on the outside, helping you stay comfortable while keeping its structured shape."),
   Product(
       name: "Nike Everyday Plus Cushioned",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -347,6 +360,7 @@ List<Product> sportswear = [
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Everyday Wool",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -365,6 +379,7 @@ List<Product> sportswear = [
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Peak",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -380,6 +395,7 @@ List<Product> sportswear = [
           "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
   Product(
       name: "Nike Sportswear Club PrimaLoft®",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -397,7 +413,9 @@ List<Product> sportswear = [
 ];
 List<Product> shoes_football = [
   Product(
-      name: "Nike Mercurial Superfly 9 Lite",quantity: 0,
+      name: "Nike Mercurial Superfly 9 Lite",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
             url:
@@ -408,12 +426,15 @@ List<Product> shoes_football = [
       disPrice: 150.00,
       colorshown_1: 'Guava Ice/Black',
       styleColor1: 'DZ3475-800',
+      
       type: 'football shoes',
       describtion:
           "Step into the dawn of a new day and put the globe on notice about your skills. A flashy iridescent plate, futuristic graphic and vibrant colours resembling a gradient sunrise speak to the gravitational power of the women's game, a fully fledged force capable of uniting us on and off the pitch.",
       discount: '50%'),
   Product(
-      name: "Nike Mercurial Superfly 9 Academy",quantity: 0,
+      name: "Nike Mercurial Superfly 9 Academy",
+      quantity: 0,
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -429,7 +450,9 @@ List<Product> shoes_football = [
           "Instantly tilt the pitch in the bold design of the Superfly 9 Academy MG. It's loaded with a Zoom Air unit and flexible NikeSkin up top for exceptional touch, so you can dominate in the waning minutes of a match—when it matters most. Fast is in the Air.",
       discount: '50%'),
   Product(
-      name: "Nike Phantom GX Academy",quantity: 0,
+      name: "Nike Phantom GX Academy",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
             url:
@@ -445,7 +468,9 @@ List<Product> shoes_football = [
           "Instantly tilt the pitch in the bold design of the Superfly 9 Academy MG. It's loaded with a Zoom Air unit and flexible NikeSkin up top for exceptional touch, so you can dominate in the waning minutes of a match—when it matters most. Fast is in the Air.",
       discount: '50%'),
   Product(
-      name: "Nike Zoom Mercurial Vapor 15 Elite FG",quantity: 0,
+      name: "Nike Zoom Mercurial Vapor 15 Elite FG",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
             url:
@@ -463,7 +488,9 @@ List<Product> shoes_football = [
 ];
 List<Product> nike_air_jordan = [
   Product(
-      name: "Air Jordan 1 Retro High OG",quantity: 0,
+      name: "Air Jordan 1 Retro High OG",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
           url:
@@ -480,7 +507,9 @@ List<Product> nike_air_jordan = [
           "3 + 1 = a whole new icon. Celebrating 35 years of the Air Jordan 3, these kicks combine the classic AJ1 silhouette with an original AJ3 colourway.",
       discount: '50%'),
   Product(
-      name: "Jordan Stay Loyal 2",quantity: 0,
+      name: "Jordan Stay Loyal 2",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
           url:
@@ -497,7 +526,9 @@ List<Product> nike_air_jordan = [
           "Inspired by generations of Js, these kicks are a collage of cool. Design details recall decades of legendary shoes while paying homage to MJs storied career.",
       discount: '50%'),
   Product(
-      name: "Air Jordan KO1",quantity: 0,
+      name: "Air Jordan KO1",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
           url:
@@ -514,7 +545,9 @@ List<Product> nike_air_jordan = [
           "We all know staring is a bad look—but when your kicks are this good, can you blame 'em? It's no surprise everyone wants to see the AJKO, a re-imagining of Jordan's first hit shoe that leverages a mix of materials for a whole new vibe. ",
       discount: '50%'),
   Product(
-      name: "Jumpman MVP",quantity: 0,
+      name: "Jumpman MVP",
+      isFavorite: false,
+      quantity: 0,
       imageUrl: [
         ImageInfo(
           url:
@@ -534,6 +567,7 @@ List<Product> nike_air_jordan = [
 List<Product> Product_all = [
   Product(
       name: "Nike InfinityRN4 Midnight",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -570,6 +604,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Nike Air Pegasus",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -606,6 +641,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Nike Runner",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -642,6 +678,7 @@ List<Product> Product_all = [
       discount: '24%'),
   Product(
       name: "Nike Air VaporMax 2023 Flyknit",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -678,6 +715,7 @@ List<Product> Product_all = [
       discount: '24%'),
   Product(
       name: "Nike Sportswear Heritage86 Futura",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -727,6 +765,7 @@ List<Product> Product_all = [
     type: 'women_hoodie',
     type1: 'sportwear',
     quantity: 0,
+    isFavorite: false,
     describtion:
         "Can you believe it's already been 10 years of Tech Fleece? We're celebrating the occasion with a modern silhouette and a colour palette inspired by natural minerals. Since 2013, our premium, lightweight fleece is smooth both inside and out—giving you plenty of warmth without unnecessary bulk. ",
   ),
@@ -743,6 +782,7 @@ List<Product> Product_all = [
     type: 'men_hoodie',
     type1: 'sportwear',
     quantity: 0,
+    isFavorite: false,
     describtion:
         "Made from soft French terry fleece for warmth and comfort, this Nike SB hoodie features our signature box logo front and centre. The skate-ready fit is roomy through the chest, shoulders and body for easy movement and layering. Skate hard, lounge easy. ",
   ),
@@ -759,12 +799,14 @@ List<Product> Product_all = [
     styleColor1: 'FB7921-113',
     type: 'men_hoodie',
     type1: 'sportwear',
+    isFavorite: false,
     quantity: 0,
     describtion:
         "Blending 2 of our most iconic looks, this full-zip hoodie draws design inspiration from our timeless Windrunner jacket as well as our Tech Fleece jacket.",
   ),
   Product(
       name: "Nike Sportswear Tech Fleece OG",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -781,6 +823,7 @@ List<Product> Product_all = [
           "Can you believe it's already been 10 years of Tech Fleece? We’re celebrating the occasion by bringing back the tailored lines and sleek details from the original design. Our premium, lightweight fleece–smooth both inside and out–gives you plenty of warmth without adding bulk.Complete your look with matching joggers or your favorite pair of leggings. The future of fleece starts here."),
   Product(
       name: "Nike Sportswear Phoenix Fleece",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
           url:
@@ -798,6 +841,7 @@ List<Product> Product_all = [
           "With eye-catching stripes and a voluminous fit, this Phoenix Fleece sweatshirt gives you a look that's anything but basic. Midweight brushed fleece feels extra soft on the inside and smooth on the outside, helping you stay comfortable while keeping its structured shape."),
   Product(
       name: "Nike Everyday Plus Cushioned",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -814,6 +858,7 @@ List<Product> Product_all = [
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Everyday Wool",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -832,6 +877,7 @@ List<Product> Product_all = [
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Peak",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url: 'lib/assets/pic/category/Product/SportWears/Nike Peak.png',
@@ -847,6 +893,7 @@ List<Product> Product_all = [
           "Knit with plenty of fuzzy, warm fabric to cuff, our Nike Peak beanie gives you stylish options to help conquer the cold. Plush knit yarn hugs your head for comfort that lasts all day. When cold weather hits, you can fold the cuff down over your ears for extra protection."),
   Product(
       name: "Nike Sportswear Club PrimaLoft®",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -863,6 +910,7 @@ List<Product> Product_all = [
           "Bring the warmth this classic puffer vest design. It's equipped with PrimaLoft® Thermoplume insulation and water-repellent ripstop fabric to help you fight off the chill from those cold, rainy days. Pull it on over your favorite flannel or hoodie and face the cool weather with confidence."),
   Product(
       name: "Nike Mercurial Superfly 9 Lite",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -880,6 +928,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Nike Mercurial Superfly 9 Academy",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -897,6 +946,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Nike Phantom GX Academy",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -914,6 +964,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Nike Zoom Mercurial Vapor 15 Elite FG",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -931,6 +982,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Air Jordan 1 Retro High OG",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
           url:
@@ -949,6 +1001,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Jordan Stay Loyal 2",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
           url:
@@ -967,6 +1020,7 @@ List<Product> Product_all = [
       discount: '50%'),
   Product(
       name: "Air Jordan KO1",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
           url:
@@ -985,6 +1039,7 @@ List<Product> Product_all = [
       quantity: 0),
   Product(
       name: "Jumpman MVP",
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
           url:
@@ -1038,10 +1093,11 @@ List<Product> product_discount = [
       type: 'Shoes',
       describtion:
           "Nike InfinityRN 4 is a brand-new take on a familiar favourite.\tIt's made from our all-new Nike ReactX foam, which gives you 13% more energy return compared with Nike React foam, to help you stay fresh and bouncy. (What's more? Nike ReactX reduces the carbon footprint of the midsole by at least 43% compared with Nike React foam, so it helps support the planet, too).",
-      discount: '24%'),
+      discount: '24%', isFavorite: false),
   Product(
       name: "Nike Air Pegasus",
       quantity: 0,
+      isFavorite: false,
       imageUrl: [
         ImageInfo(
             url:
@@ -1077,6 +1133,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Nike Runner",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1097,6 +1154,7 @@ List<Product> product_discount = [
             color: '0xffB8EEE5'),
       ],
       price: 133,
+      
       disPrice: 175.00,
       styleColor1: 'DX5048-500',
       styleColor2: 'DX5048-400',
@@ -1113,6 +1171,7 @@ List<Product> product_discount = [
       discount: '24%'),
   Product(
       name: "Nike Air VaporMax 2023 Flyknit",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1149,6 +1208,7 @@ List<Product> product_discount = [
       discount: '24%'),
   Product(
       name: "Nike Sportswear Heritage86 Futura",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1185,6 +1245,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Nike Everyday Wool",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1203,6 +1264,7 @@ List<Product> product_discount = [
           "As outdoorsy as the Nike Everyday Plus Cushioned ankle socks look, they're actually just big softies. Their heathered, knit construction offers a trail-ready look and extra-cozy feel perfect for pairing with your favorite hiking boots, sneakers or even just your slippers."),
   Product(
       name: "Nike Mercurial Superfly 9 Lite",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1220,6 +1282,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Nike Mercurial Superfly 9 Academy",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1237,6 +1300,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Nike Phantom GX Academy",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1254,6 +1318,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Nike Zoom Mercurial Vapor 15 Elite FG",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1271,6 +1336,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Air Jordan 1 Retro High OG",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1289,6 +1355,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Jordan Stay Loyal 2",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1307,6 +1374,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Air Jordan KO1",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(
@@ -1325,6 +1393,7 @@ List<Product> product_discount = [
       discount: '50%'),
   Product(
       name: "Jumpman MVP",
+      isFavorite: false,
       quantity: 0,
       imageUrl: [
         ImageInfo(

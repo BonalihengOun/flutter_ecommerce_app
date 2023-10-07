@@ -1,4 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:flutter_sneaker_shop_ecommerce/Widegt_Component/couponCodeSearch.dart';
 import 'package:flutter_sneaker_shop_ecommerce/constants/colors.dart';
 import 'package:flutter_sneaker_shop_ecommerce/model/Product.dart';
 import 'package:flutter_sneaker_shop_ecommerce/state_management/cart_provider.dart';
@@ -12,7 +15,7 @@ class Cart_screen extends StatefulWidget {
 class _Cart_screenState extends State<Cart_screen> {
   final CartProvider _cartProvider = CartProvider();
   double shipping = 20.00;
-  bool isFavorite = false;
+  final TextEditingController _couponController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +85,7 @@ class _Cart_screenState extends State<Cart_screen> {
                                       product.name,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 14,
                                         color: Dark,
                                         fontFamily: 'NiraBold',
@@ -90,7 +93,7 @@ class _Cart_screenState extends State<Cart_screen> {
                                     ),
                                     Text(
                                       '\$' + product.price.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontFamily: 'NiraBold',
                                           fontSize: 16,
                                           color: Dark),
@@ -107,8 +110,19 @@ class _Cart_screenState extends State<Cart_screen> {
                                       children: [
                                         IconButton(
                                           splashRadius: 20,
-                                          onPressed: () {},
-                                          icon: isFavorite
+                                          onPressed: () {
+                                            setState(() {
+                                              // Toggle the favorite status of the current product if product is not null and isFavorite is not null
+                                              if (product != null &&
+                                                  product.isFavorite != null) {
+                                                product.isFavorite =
+                                                    !product.isFavorite;
+                                              }
+                                            });
+                                          },
+                                          icon: product != null &&
+                                                  product.isFavorite != null &&
+                                                  product.isFavorite
                                               ? Image.asset(
                                                   'lib/assets/pic/Icon App/Vector1.png',
                                                   width: 28,
@@ -231,7 +245,6 @@ class _Cart_screenState extends State<Cart_screen> {
                                                   child: IconButton(
                                                     color:
                                                         Dark.withOpacity(0.8),
-                                                    splashRadius: 20,
                                                     icon: Icon(Icons.add),
                                                     onPressed: () {
                                                       _cartProvider
@@ -258,6 +271,10 @@ class _Cart_screenState extends State<Cart_screen> {
                     },
                   ),
                 ),
+              ),
+              searchCoupon(
+                textController1: _couponController,
+                hintText1: "Enter Cupon Code",
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.90,
@@ -353,6 +370,38 @@ class _Cart_screenState extends State<Cart_screen> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+
+                    primary: Dark,
+                    // Change the button's background color
+                    onPrimary: Colors.white,
+                    // Change the text color
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(14.0), // Set the border radius
+                    ),
+
+                    minimumSize: Size(
+                        MediaQuery.of(context).size.width * 0.90,
+                        MediaQuery.of(context).size.height *
+                            0.065), // Set the width and height
+                  ),
+                  child: Text(
+                    "Check Out",
+                    style: TextStyle(fontFamily: "NiraBold"),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
               ),
             ],
           );
